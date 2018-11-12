@@ -2,14 +2,14 @@ package com.example.melanie.appaens.model;
 
 import java.util.Date;
 
-public class observatie {
+public class Observatie {
 
     private String client;
     private String observator;
-    private Date datum;
+    private String datum;
     private boolean video;
 
-    observatie(String client, String observator, Date datum, boolean video){
+    public Observatie(String client, String observator, String datum, boolean video){
         this.client = client;
         this.observator = observator;
         this.datum = datum;
@@ -24,11 +24,11 @@ public class observatie {
         this.client = client;
     }
 
-    public Date getDatum() {
+    public String getDatum() {
         return datum;
     }
 
-    public void setDatum(Date datum) {
+    public void setDatum(String datum) {
         this.datum = datum;
     }
 

@@ -31,7 +31,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Naam observator"/>
+            android:hint="@string/start_placeholderObservator"/>
 
         <EditText
             android:id="@+id/idStart_naamclient"
@@ -40,7 +40,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Naam cliënt" />
+            android:hint="@string/start_placeholderClient" />
 
         <EditText
             android:id="@+id/idStart_datum"
@@ -49,7 +49,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="date"
-            android:hint="Datum"/>
+            android:hint="@string/start_placeholderDatum"/>
     </LinearLayout>
 
     <LinearLayout

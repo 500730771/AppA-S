@@ -7,4 +7,9 @@
     <!--Home scherm-->
     <string name="home_titel">Toelichting</string>
     <string name="home_toelichting">Random tekst want hier komt de toelichting</string>
+
+    <!--Start scherm-->
+    <string name="start_placeholderObservator">Naam observator</string>
+    <string name="start_placeholderClient">Naam client</string>
+    <string name="start_placeholderDatum">Datum</string>
 </resources>

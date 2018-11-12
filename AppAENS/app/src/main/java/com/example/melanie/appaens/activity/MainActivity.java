@@ -20,10 +20,6 @@ public class MainActivity extends AppCompatActivity {
         mVerder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startActivity = new Intent(MainActivity.this, StartActivity.class);
-//                MainActivity.this.st(StartActivity);
-//                overridePendingTransition(R.anim.enter, R.anim.exit);
-
                 startActivity(new Intent(MainActivity.this, StartActivity.class));
             }
         });
