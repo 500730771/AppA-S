@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">A&amp;S</string>
+
+    <!--button-->
+    <string name="button_verder">Verder</string>
+
+    <!--Home scherm-->
+    <string name="home_titel">Toelichting</string>
+    <string name="home_toelichting">Random tekst want hier komt de toelichting</string>
+</resources>
