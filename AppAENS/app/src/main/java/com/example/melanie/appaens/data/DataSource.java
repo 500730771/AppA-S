@@ -1,0 +1,68 @@
+package com.example.melanie.appaens.data;
+
+import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.model.Categorie;
+import com.example.melanie.appaens.model.Observatie;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataSource {
+
+    private static Observatie observatie;
+    private static List<Categorie> categorieList;
+    private static boolean firstrun = true;
+
+    public DataSource(){
+        if (firstrun){
+            setCategorieList();
+            firstrun = false;
+        }
+    }
+
+    public int[] getDrawables(){
+        int[] drawableList = {
+                R.drawable.acties,
+                R.drawable.armen,
+                R.drawable.bovenlichaam,
+                R.drawable.gehelelichaam,
+                R.drawable.geluid,
+                R.drawable.handen,
+                R.drawable.hoofd,
+                R.drawable.houding,
+                R.drawable.mond,
+                R.drawable.neus,
+                R.drawable.voeten
+        };
+        return drawableList;
+    }
+
+    private void setCategorieList(){
+        //initialize categorielist
+        categorieList = new ArrayList<Categorie>();
+        categorieList.add(new Categorie(0, "Acties", 0, 5, 0));
+        categorieList.add(new Categorie(0, "Armen", 1, 5, 0));
+        categorieList.add(new Categorie(0, "Bovenlichaam", 2, 5, 0));
+        categorieList.add(new Categorie(0, "Gehele lichaam", 3, 5, 0));
+        categorieList.add(new Categorie(0, "Geluid", 4, 5, 0));
+        categorieList.add(new Categorie(0, "Handen", 5, 5, 0));
+        categorieList.add(new Categorie(0, "Hoofd", 6, 5, 0));
+        categorieList.add(new Categorie(0, "Houding", 7, 5, 0));
+        categorieList.add(new Categorie(0, "Mond", 8, 5, 0));
+        categorieList.add(new Categorie(0, "Neus", 9, 5, 0));
+        categorieList.add(new Categorie(0, "Voeten", 10, 5, 0));
+    }
+
+    public void setObservatie(Observatie observatie){
+        this.observatie = observatie;
+    }
+
+    public Observatie getObservatie(){
+        return null;
+    }
+
+    public List<Categorie> getCategories(){
+        return categorieList;
+    }
+}
+

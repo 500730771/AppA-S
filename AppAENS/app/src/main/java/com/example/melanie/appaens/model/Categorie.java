@@ -1,18 +1,29 @@
 package com.example.melanie.appaens.model;
 
 import android.media.Image;
+import android.widget.ImageView;
 
 public class Categorie {
+    private int id;
     private String naam;
-    private Image image;
+    private int image;
     private int maxVragen;
     private int beantwoordeVragen;
 
-    public Categorie(String naam, Image image, int maxVragen, int beantwoordeVragen){
+    public Categorie(int id, String naam, int image, int maxVragen, int beantwoordeVragen){
+        this.id = id;
         this.naam = naam;
         this.image = image;
         this.maxVragen = maxVragen;
         this.beantwoordeVragen = beantwoordeVragen;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
 
     public String getNaam() {
@@ -23,11 +34,11 @@ public class Categorie {
         this.naam = naam;
     }
 
-    public Image getImage() {
+    public int getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(int image) {
         this.image = image;
     }
 
