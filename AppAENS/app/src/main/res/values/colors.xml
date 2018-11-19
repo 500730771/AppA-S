@@ -10,5 +10,12 @@
 
     <color name="colorTitleText">#000000</color>
 
+    <color name="colorRood">#D2282C</color>
+    <color name="colorOranje">#F9B672</color>
+    <color name="colorGeel">#FFE897</color>
+    <color name="colorBlauw">#B1D6E2</color>
+    <color name="colorGroen">#74A82D</color>
+    <color name="colorRoze">#F28F86</color>
+    <color name="colorPaars">#5E4F9C</color>
 
 </resources>

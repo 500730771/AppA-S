@@ -2,6 +2,7 @@ package com.example.melanie.appaens.data;
 
 import com.example.melanie.appaens.R;
 import com.example.melanie.appaens.model.Categorie;
+import com.example.melanie.appaens.model.Informatie;
 import com.example.melanie.appaens.model.Observatie;
 
 import java.util.ArrayList;
@@ -10,7 +11,9 @@ import java.util.List;
 public class DataSource {
 
     private static Observatie observatie;
+    private static Informatie informatie;
     private static List<Categorie> categorieList;
+    private static List<Informatie> informatieList;
     private static boolean firstrun = true;
 
     public DataSource(){
@@ -37,6 +40,19 @@ public class DataSource {
         return drawableList;
     }
 
+    public int[] getColors(){
+        int[] colorList = {
+                R.color.colorRood,
+                R.color.colorOranje,
+                R.color.colorGeel,
+                R.color.colorBlauw,
+                R.color.colorGroen,
+                R.color.colorRoze,
+                R.color.colorPaars
+        };
+        return colorList;
+    }
+
     private void setCategorieList(){
         //initialize categorielist
         categorieList = new ArrayList<Categorie>();
@@ -53,12 +69,15 @@ public class DataSource {
         categorieList.add(new Categorie(0, "Voeten", 10, 5, 0));
     }
 
-    public void setObservatie(Observatie observatie){
-        this.observatie = observatie;
-    }
-
-    public Observatie getObservatie(){
-        return null;
+    private void setInformatieList(){
+        //initialize informatielist
+        informatieList.add(new Informatie(0, "-3", "", ""));
+        informatieList.add(new Informatie(1, "-2", "", ""));
+        informatieList.add(new Informatie(2, "-1", "", ""));
+        informatieList.add(new Informatie(3, "0", "", ""));
+        informatieList.add(new Informatie(4, "+1", "", ""));
+        informatieList.add(new Informatie(5, "+2", "", ""));
+        informatieList.add(new Informatie(6, "+3", "", ""));
     }
 
     public List<Categorie> getCategories(){

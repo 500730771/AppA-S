@@ -39,8 +39,16 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(StartActivity.this, ScrollMenuActivity.class));
+                overridePendingTransition(R.anim.enter, R.anim.exit);
             }
         });
 
+    }
+
+    //transition overrides
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.left_right, R.anim.right_left);
     }
 }
