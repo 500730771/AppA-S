@@ -14,10 +14,13 @@ import android.widget.TextView;
 import com.example.melanie.appaens.R;
 import com.example.melanie.appaens.adapter.RecyclerViewAdapter;
 import com.example.melanie.appaens.adapter.RecyclerViewInformatieAdapter;
+import com.example.melanie.appaens.adapter.RecyclerViewQuestionAdapter;
 import com.example.melanie.appaens.data.DataSource;
 import com.example.melanie.appaens.fragment.HeaderFragment;
+import com.example.melanie.appaens.fragment.QuestionFragment;
 import com.example.melanie.appaens.model.Categorie;
 import com.example.melanie.appaens.model.Informatie;
+import com.example.melanie.appaens.model.Question;
 
 import java.util.List;
 
@@ -25,6 +28,7 @@ public class ScrollMenuActivity extends AppCompatActivity {
 
     private List<Categorie> mCategorieList;
     private List<Informatie> mInformatieList;
+    private List<Question> mQuestionList;
     private int[] mDrawableList;
     private int[] mColorList;
 
@@ -39,10 +43,14 @@ public class ScrollMenuActivity extends AppCompatActivity {
         mDrawableList = data.getDrawables();
         mInformatieList = data.getInformatieList();
         mColorList = data.getColors();
+        mQuestionList = data.getQuestionListCategorie(0);
 
         AppCompatActivity activity = (AppCompatActivity) this;
         HeaderFragment myFragment = new HeaderFragment();
         activity.getSupportFragmentManager().beginTransaction().replace(R.id.header_fragment, myFragment).addToBackStack(null).commit();
+
+        QuestionFragment qfragment = new QuestionFragment(this, 0);
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, qfragment).addToBackStack(null).commit();
 
         initRecyclerviewNavigation();
         initRecyclerviewInformatie();

@@ -54,24 +54,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="5"
-            app:layout_constraintBottom_toTopOf="@+id/idMenu_QuestionList"
+            app:layout_constraintBottom_toTopOf="@+id/question_fragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/idMenu_QuestionList"
-            android:layout_width="match_parent"
-            android:layout_height="350dp"
-            android:layout_weight="70"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        <FrameLayout
+            android:id="@+id/question_fragment"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_weight="70">
+        </FrameLayout>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

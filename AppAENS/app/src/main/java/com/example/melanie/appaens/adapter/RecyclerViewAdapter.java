@@ -6,6 +6,7 @@ import android.preference.PreferenceActivity;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.melanie.appaens.R;
 import com.example.melanie.appaens.fragment.HeaderFragment;
+import com.example.melanie.appaens.fragment.QuestionFragment;
 import com.example.melanie.appaens.model.Categorie;
 
 import java.util.List;
@@ -55,12 +57,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
          holder.item_box.setOnClickListener(new View.OnClickListener(){
              @Override
              public void onClick(View v) {
-                 Toast.makeText(context, mCategorie.get(position).getNaam(),Toast.LENGTH_SHORT).show();
                  current = mCategorie.get(position);
 
+                 //header
                  AppCompatActivity activity = (AppCompatActivity) view.getContext();
                  HeaderFragment myFragment = new HeaderFragment();
                  activity.getSupportFragmentManager().beginTransaction().replace(R.id.header_fragment, myFragment).addToBackStack(null).commit();
+
+                 //question list
+                 QuestionFragment qFragment = new QuestionFragment(context, current.getImage());
+                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, qFragment).addToBackStack(null).commit();
 
              }
          });
