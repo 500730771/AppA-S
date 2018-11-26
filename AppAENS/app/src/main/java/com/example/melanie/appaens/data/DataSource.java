@@ -17,10 +17,11 @@ public class DataSource {
     private static boolean firstrun = true;
 
     public DataSource(){
-        if (firstrun){
+//        if (firstrun){
             setCategorieList();
-            firstrun = false;
-        }
+            setInformatieList();
+//            firstrun = false;
+//        }
     }
 
     public int[] getDrawables(){
@@ -71,6 +72,7 @@ public class DataSource {
 
     private void setInformatieList(){
         //initialize informatielist
+        informatieList = new ArrayList<Informatie>();
         informatieList.add(new Informatie(0, "-3", "", ""));
         informatieList.add(new Informatie(1, "-2", "", ""));
         informatieList.add(new Informatie(2, "-1", "", ""));
@@ -80,8 +82,16 @@ public class DataSource {
         informatieList.add(new Informatie(6, "+3", "", ""));
     }
 
+    private void setQuestionList(){
+        
+    }
+
     public List<Categorie> getCategories(){
         return categorieList;
+    }
+
+    public List<Informatie> getInformatieList(){
+        return informatieList;
     }
 }
 

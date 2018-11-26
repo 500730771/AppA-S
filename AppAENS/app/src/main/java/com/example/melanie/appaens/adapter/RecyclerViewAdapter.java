@@ -1,7 +1,11 @@
 package com.example.melanie.appaens.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.fragment.HeaderFragment;
 import com.example.melanie.appaens.model.Categorie;
 
 import java.util.List;
@@ -19,8 +24,15 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
     private Context context;
+    private static Categorie current;
     private List<Categorie> mCategorie;
-    private int[] mDrawableList;
+    private static int[] mDrawableList;
+
+    private View view;
+
+    public RecyclerViewAdapter(){
+
+    }
 
     public RecyclerViewAdapter(Context context, List<Categorie> mCategorie, int[] mDrawableList){
         this.context = context;
@@ -31,7 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tob_menu_item, parent, false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tob_menu_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -40,18 +52,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
          holder.item_title.setText(mCategorie.get(position).getBeantwoordeVragen() + "/" + mCategorie.get(position).getMaxVragen());
          holder.item_image.setImageResource(mDrawableList[mCategorie.get(position).getImage()]);
 
-//         holder.header_title.setText(mCategorie.get(position).getNaam());
-//         holder.header_image.setImageResource(mDrawableList[mCategorie.get(position).getImage()]);
-
          holder.item_box.setOnClickListener(new View.OnClickListener(){
              @Override
              public void onClick(View v) {
                  Toast.makeText(context, mCategorie.get(position).getNaam(),Toast.LENGTH_SHORT).show();
+                 current = mCategorie.get(position);
 
-//                 holder.header_title.setText(mCategorie.get(position).getNaam());
-//                 holder.header_image.setImageResource(mDrawableList[mCategorie.get(position).getImage()]);
+                 AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                 HeaderFragment myFragment = new HeaderFragment();
+                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.header_fragment, myFragment).addToBackStack(null).commit();
+
              }
          });
+    }
+
+    public Categorie getCurrentCategorie(){
+        return current;
+    }
+
+    public int[] getmDrawableList(){
+        return mDrawableList;
     }
 
     @Override
@@ -59,32 +79,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mCategorie.size();
     }
 
-    public onItemClickListener listener;
-
-    public void setOnItemClickListener(onItemClickListener listener) {
-        this.listener = listener;
-    }
-
-    public interface onItemClickListener{
-        void onItemClick(View view, int position);
-    }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView item_title;
         ImageView item_image;
         LinearLayout item_box;
-
-        TextView header_title;
-        ImageView header_image;
 
         public ViewHolder(View itemView){
             super(itemView);
             item_title = (TextView) itemView.findViewById(R.id.idTopMenu_text);
             item_image = (ImageView) itemView.findViewById(R.id.idTopMenu_image);
             item_box = (LinearLayout) itemView.findViewById(R.id.idTopMenuBox);
-
-            header_title = (TextView) itemView.findViewById(R.id.idMenu_HeaderTitle);
-            header_image = (ImageView) itemView.findViewById(R.id.idMenu_HeaderImage);
         }
     }
 }
