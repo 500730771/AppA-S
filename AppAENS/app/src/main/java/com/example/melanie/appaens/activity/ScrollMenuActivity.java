@@ -1,20 +1,13 @@
 package com.example.melanie.appaens.activity;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.example.melanie.appaens.R;
 import com.example.melanie.appaens.adapter.RecyclerViewAdapter;
 import com.example.melanie.appaens.adapter.RecyclerViewInformatieAdapter;
-import com.example.melanie.appaens.adapter.RecyclerViewQuestionAdapter;
 import com.example.melanie.appaens.data.DataSource;
 import com.example.melanie.appaens.fragment.HeaderFragment;
 import com.example.melanie.appaens.fragment.QuestionFragment;
@@ -40,7 +33,7 @@ public class ScrollMenuActivity extends AppCompatActivity {
 
         DataSource data = new DataSource();
         mCategorieList = data.getCategories();
-        mDrawableList = data.getDrawables();
+        mDrawableList = data.getDrawablesCategorie();
         mInformatieList = data.getInformatieList();
         mColorList = data.getColors();
         mQuestionList = data.getQuestionListCategorie(0);

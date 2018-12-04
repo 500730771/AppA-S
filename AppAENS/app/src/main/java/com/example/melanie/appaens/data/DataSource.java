@@ -27,7 +27,14 @@ public class DataSource {
 //        }
     }
 
-    public int[] getDrawables(){
+    public int[] getAnswers(){
+        int[] answerList = {
+                0,1,2,3,4,5,6,7
+        };
+        return answerList;
+    }
+
+    public int[] getDrawablesCategorie(){
         int[] drawableList = {
                 R.drawable.acties,
                 R.drawable.armen,
@@ -40,6 +47,19 @@ public class DataSource {
                 R.drawable.mond,
                 R.drawable.neus,
                 R.drawable.voeten
+        };
+        return drawableList;
+    }
+
+    public int[] getDrawablesInformatie(){
+        int[] drawableList = {
+                R.drawable.negatiefoverspannen,
+                R.drawable.negatieflichtgespannen,
+                R.drawable.negatiefgespannen,
+                R.drawable.neutraal,
+                R.drawable.positieflichtgespannen,
+                R.drawable.positiefgespannen,
+                R.drawable.positiefoverspannen
         };
         return drawableList;
     }

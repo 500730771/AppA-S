@@ -17,6 +17,7 @@
             android:id="@+id/idQuestion_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:text="Question"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -29,49 +30,64 @@
                 android:id="@+id/idQuestion_red"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border"/>
 
             <Button
                 android:id="@+id/idQuestion_orange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border"/>
 
             <Button
                 android:id="@+id/idQuestion_yellow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border"/>
 
             <Button
                 android:id="@+id/idQuestion_blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border" />
 
             <Button
                 android:id="@+id/idQuestion_green"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border" />
 
             <Button
                 android:id="@+id/idQuestion_pink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border" />
 
             <Button
                 android:id="@+id/idQuestion_purple"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_border" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:weightSum="9">
 
             <TextView
                 android:id="@+id/idQuestion_toelichting"
@@ -84,7 +100,7 @@
                 android:id="@+id/idQuestion_toelichtingtext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="8"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Name" />

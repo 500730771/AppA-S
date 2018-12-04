@@ -1,24 +1,22 @@
 package com.example.melanie.appaens.adapter;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
+import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.activity.Popup;
 import com.example.melanie.appaens.model.Informatie;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class RecyclerViewInformatieAdapter extends RecyclerView.Adapter<RecyclerViewInformatieAdapter.ViewHolderInformatie>{
@@ -43,12 +41,14 @@ public class RecyclerViewInformatieAdapter extends RecyclerView.Adapter<Recycler
     @Override
     public void onBindViewHolder(@NonNull final RecyclerViewInformatieAdapter.ViewHolderInformatie holder, final int position) {
         holder.text.setText(mInformatieList.get(position).getShortText());
-        holder.color.setBackgroundColor(ContextCompat.getColor(context, this.mColorList[mInformatieList.get(position).getKleur()]));
+        holder.color.setBackgroundColor(ContextCompat.getColor(context, this.mColorList[mInformatieList.get(position).getId()]));
 
         holder.box.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, mInformatieList.get(position).getShortText(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, Popup.class);
+                intent.putExtra("Informatie", mInformatieList.get(position));
+                context.startActivity(intent);
             }
         });
     }

@@ -17,7 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.StartActivity" />
-        <activity android:name=".activity.ScrollMenuActivity"></activity>
+        <activity android:name=".activity.ScrollMenuActivity" />
+        <activity android:name=".activity.Popup"
+            android:theme="@style/AppTheme.CustomTheme">
+
+        </activity>
     </application>
 
 </manifest>
