@@ -1,6 +1,7 @@
 package com.example.melanie.appaens.model;
 
 public class Question {
+    private static int id = -1;
     private int categorieId;
     private String question;
     private int answerClient;
@@ -8,12 +9,15 @@ public class Question {
     private String toelichting;
 
     public Question(int categorieId, String question){
+        this.id = id++;
         this.categorieId = categorieId;
         this.question = question;
         this.answerClient = 0;
         this.answerMentor = 0;
         this.toelichting = "";
     }
+
+    public int getId(){return id;}
 
     public int getCategorieId() {
         return categorieId;

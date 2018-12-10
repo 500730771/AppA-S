@@ -37,7 +37,6 @@ public class HeaderFragment extends Fragment {
         RecyclerViewAdapter adapter = new RecyclerViewAdapter();
         if (adapter.getCurrentCategorie() != null){
             mCategorie = adapter.getCurrentCategorie();
-
             Log.d(TAG, "SET HEADER TO CATEGORIE "+ mCategorie.getImage());
         } else {
             mCategorie = data.getCategories().get(0);

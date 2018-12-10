@@ -9,6 +9,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.example.melanie.appaens.R;
 import com.example.melanie.appaens.activity.Popup;
 import com.example.melanie.appaens.data.DataSource;
+import com.example.melanie.appaens.model.Categorie;
 import com.example.melanie.appaens.model.Informatie;
 import com.example.melanie.appaens.model.Question;
 
@@ -29,15 +31,18 @@ import java.util.List;
 public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerViewQuestionAdapter.ViewHolderInformatie>{
 
     private Context context;
-    private List<Question> mQuestionList;
-    private int[] colorList;
-    private Button[] buttonList;
+    private static List<Question> mQuestionList;
+    private static List<Categorie> mCategorieList;
+    private static int[] colorList;
+    private static Button[][] buttonList;
+    private static DataSource data;
 
     public RecyclerViewQuestionAdapter(Context context, List<Question> mQuestionList){
         this.context = context;
+        data = new DataSource();
         this.mQuestionList = mQuestionList;
-        DataSource data = new DataSource();
         colorList = data.getColors();
+        mCategorieList = data.getCategories();
     }
 
     @NonNull
@@ -49,90 +54,124 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerViewQuestionAdapter.ViewHolderInformatie holder, final int position) {
+        // set question text
         holder.mQuestion.setText(mQuestionList.get(position).getQuestion());
-        buttonList = new Button[7];
-        buttonList[0] = holder.mButtonRed;
-        buttonList[1] = holder.mButtonOrange;
-        buttonList[2] = holder.mButtonYellow;
-        buttonList[3] = holder.mButtonBlue;
-        buttonList[4] = holder.mButtonGreen;
-        buttonList[5] = holder.mButtonPink;
-        buttonList[6] = holder.mButtonPurple;
 
-        int i = 0;
-        for (Button b : buttonList) {
-            if (mQuestionList.get(position).getAnswerClient() == 0) {
-                setButton(b, i, 0, mQuestionList.get(position));
-            } else {
-                setButtonBorder(b, i, mQuestionList.get(position).getAnswerClient(), mQuestionList.get(position));
+        print();
+
+        // save all buttons in a list
+        buttonList = new Button[4][7];
+        buttonList[position][0] = holder.mButtonRed;
+        buttonList[position][1] = holder.mButtonOrange;
+        buttonList[position][2] = holder.mButtonYellow;
+        buttonList[position][3] = holder.mButtonBlue;
+        buttonList[position][4] = holder.mButtonGreen;
+        buttonList[position][5] = holder.mButtonPink;
+        buttonList[position][6] = holder.mButtonPurple;
+
+        // set all the buttons
+        for (int i = 0; i < 7; i++) {
+
+            setButton(buttonList[position][i], i, 0, mQuestionList.get(position));
+
+            switch (mQuestionList.get(position).getAnswerClient()){
+                case 0: setButton(buttonList[position][i], i, 0, mQuestionList.get(position));
+                    break;
+                case 1: setButtonBorder(buttonList[position][0], 0, 0, mQuestionList.get(position));
+                    break;
+                case 2: setButtonBorder(buttonList[position][1], 1, 0, mQuestionList.get(position));
+                    break;
+                case 3: setButtonBorder(buttonList[position][2], 2, 0, mQuestionList.get(position));
+                    break;
+                case 4: setButtonBorder(buttonList[position][3], 3, 0, mQuestionList.get(position));
+                    break;
+                case 5: setButtonBorder(buttonList[position][4], 4, 0, mQuestionList.get(position));
+                    break;
+                case 6: setButtonBorder(buttonList[position][5], 5, 0, mQuestionList.get(position));
+                    break;
+                case 7: setButtonBorder(buttonList[position][6], 6, 0, mQuestionList.get(position));
+                    break;
             }
-            i++;
         }
 
         holder.mButtonRed.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                buttonClick(holder.mButtonRed, 0, 1, mQuestionList.get(position));
+                buttonClick(holder.mButtonRed, 0, 1, mQuestionList.get(position), position);
             }
         });
         holder.mButtonOrange.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                buttonClick(holder.mButtonOrange, 1, 2, mQuestionList.get(position));
+                buttonClick(holder.mButtonOrange, 1, 2, mQuestionList.get(position), position);
             }
         });
         holder.mButtonYellow.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                buttonClick(holder.mButtonYellow, 2, 3, mQuestionList.get(position));
+                buttonClick(holder.mButtonYellow, 2, 3, mQuestionList.get(position), position);
             }
         });
         holder.mButtonBlue.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                buttonClick(holder.mButtonBlue, 3, 4, mQuestionList.get(position));
+                buttonClick(holder.mButtonBlue, 3, 4, mQuestionList.get(position), position);
             }
         });
         holder.mButtonGreen.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                buttonClick(holder.mButtonGreen, 4, 5, mQuestionList.get(position));
+                buttonClick(holder.mButtonGreen, 4, 5, mQuestionList.get(position), position);
             }
         });
         holder.mButtonPink.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                buttonClick(holder.mButtonPink, 5, 6, mQuestionList.get(position));
+                buttonClick(holder.mButtonPink, 5, 6, mQuestionList.get(position), position);
             }
         });
         holder.mButtonPurple.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                buttonClick(holder.mButtonPurple, 6, 7, mQuestionList.get(position));
+                buttonClick(holder.mButtonPurple, 6, 7, mQuestionList.get(position), position);
             }
         });
     }
 
-    private void buttonClick(Button button, int color, int answer, Question question){
+    private void print(){
+        for (Question q:mQuestionList) {
+            Log.d("ADAPTER", "Question: " + q.getQuestion()+ ", " + q.getAnswerClient() + ", " + q.getCategorieId());
+        }
+    }
+
+    private void buttonClick(Button button, int color, int answer, Question question, int position){
+        Log.d("ADAPTER", "Attribuut: " + position + ", " + answer);
+        int extraanswer = question.getAnswerClient();
         if (question.getAnswerClient() != 0){
             switch (question.getAnswerClient()){
-                case 1: setButton(buttonList[0], 0, 0, question);
+                case 1: setButton(buttonList[position][0], 0, 0, question);
                     break;
-                case 2: setButton(buttonList[1], 1, 0, question);
+                case 2: setButton(buttonList[position][1], 1, 0, question);
                     break;
-                case 3: setButton(buttonList[2], 2, 0, question);
+                case 3: setButton(buttonList[position][2], 2, 0, question);
                     break;
-                case 4: setButton(buttonList[3], 3, 0, question);
+                case 4: setButton(buttonList[position][3], 3, 0, question);
                     break;
-                case 5: setButton(buttonList[4], 4, 0, question);
+                case 5: setButton(buttonList[position][4], 4, 0, question);
                     break;
-                case 6: setButton(buttonList[5], 5, 0, question);
+                case 6: setButton(buttonList[position][5], 5, 0, question);
                     break;
-                case 7: setButton(buttonList[6], 6, 0, question);
+                case 7: setButton(buttonList[position][6], 6, 0, question);
                     break;
             }
         }
+        // lijst met 1 attribuut, moet worden veranderd naar de hele lijst.
         question.setAnswerClient(answer);
+        data.setQuestion(question);
+//        if (extraanswer == 0) {
+            RecyclerViewAdapter adapter = new RecyclerViewAdapter();
+            adapter.notifyItemChanged(question.getCategorieId());
+//        }
         setButtonBorder(button, color, answer, question);
     }
 

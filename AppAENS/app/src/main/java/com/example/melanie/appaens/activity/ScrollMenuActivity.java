@@ -49,7 +49,7 @@ public class ScrollMenuActivity extends AppCompatActivity {
         initRecyclerviewInformatie();
     }
 
-    private void initRecyclerviewNavigation(){
+    public void initRecyclerviewNavigation(){
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         RecyclerView rv = (RecyclerView) findViewById(R.id.idMenu_NavigationList);
         rv.setLayoutManager(layoutManager);

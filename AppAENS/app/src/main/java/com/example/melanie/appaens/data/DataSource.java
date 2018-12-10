@@ -1,6 +1,12 @@
 package com.example.melanie.appaens.data;
 
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
 import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.activity.ScrollMenuActivity;
+import com.example.melanie.appaens.adapter.RecyclerViewAdapter;
 import com.example.melanie.appaens.model.Categorie;
 import com.example.melanie.appaens.model.Informatie;
 import com.example.melanie.appaens.model.Observatie;
@@ -19,12 +25,12 @@ public class DataSource {
     private static boolean firstrun = true;
 
     public DataSource(){
-//        if (firstrun){
-            setCategorieList();
+        if (firstrun){
             setInformatieList();
             setQuestionList();
-//            firstrun = false;
-//        }
+            setCategorieList();
+            firstrun = false;
+        }
     }
 
     public int[] getAnswers(){
@@ -80,17 +86,17 @@ public class DataSource {
     private void setCategorieList(){
         //initialize categorielist
         categorieList = new ArrayList<Categorie>();
-        categorieList.add(new Categorie(0, "Acties", 0, 5, 0));
-        categorieList.add(new Categorie(1, "Armen", 1, 5, 0));
-        categorieList.add(new Categorie(2, "Bovenlichaam", 2, 5, 0));
-        categorieList.add(new Categorie(3, "Gehele lichaam", 3, 5, 0));
-        categorieList.add(new Categorie(4, "Geluid", 4, 5, 0));
-        categorieList.add(new Categorie(5, "Handen", 5, 5, 0));
-        categorieList.add(new Categorie(6, "Hoofd", 6, 5, 0));
-        categorieList.add(new Categorie(7, "Houding", 7, 5, 0));
-        categorieList.add(new Categorie(8, "Mond", 8, 5, 0));
-        categorieList.add(new Categorie(9, "Neus", 9, 5, 0));
-        categorieList.add(new Categorie(10, "Voeten", 10, 5, 0));
+        categorieList.add(new Categorie(0, "Acties", 0, getQuestionListCategorie(0).size(), 0));
+        categorieList.add(new Categorie(1, "Armen", 1, getQuestionListCategorie(1).size(), 0));
+        categorieList.add(new Categorie(2, "Bovenlichaam", 2, getQuestionListCategorie(2).size(), 0));
+        categorieList.add(new Categorie(3, "Gehele lichaam", 3, getQuestionListCategorie(3).size(), 0));
+        categorieList.add(new Categorie(4, "Geluid", 4, getQuestionListCategorie(4).size(), 0));
+        categorieList.add(new Categorie(5, "Handen", 5, getQuestionListCategorie(5).size(), 0));
+        categorieList.add(new Categorie(6, "Hoofd", 6, getQuestionListCategorie(6).size(), 0));
+        categorieList.add(new Categorie(7, "Houding", 7, getQuestionListCategorie(7).size(), 0));
+        categorieList.add(new Categorie(8, "Mond", 8, getQuestionListCategorie(8).size(), 0));
+        categorieList.add(new Categorie(9, "Neus", 9, getQuestionListCategorie(9).size(), 0));
+        categorieList.add(new Categorie(10, "Voeten", 10, getQuestionListCategorie(10).size(), 0));
     }
 
     private void setInformatieList(){
@@ -124,6 +130,16 @@ public class DataSource {
         questionList.add(new Question(8, "Categorie 8"));
         questionList.add(new Question(9, "Categorie 9"));
         questionList.add(new Question(10, "Categorie 10"));
+    }
+
+    public void setQuestion(Question question){
+        for (Question q : questionList) {
+            if (q.getId() == question.getId()){
+                q = question;
+                //set categorie + 1 answered question
+                categorieList.get(question.getCategorieId()).setBeantwoordeVragen(categorieList.get(question.getCategorieId()).getBeantwoordeVragen() + 1);
+            }
+        }
     }
 
     public List<Categorie> getCategories(){
