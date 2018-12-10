@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,9 +68,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                  //klaar button leads to overview page
                  //otherwise to question list page
+
+                 Log.d("RECYCLEVIEWADAPTER", "ID: " + current.getId());
                  if (current.getId() == 11){
-                     OverviewFragment oFragment = new OverviewFragment();
-                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.overview_fragment, oFragment).addToBackStack(null).commit();
+                     OverviewFragment oFragment = new OverviewFragment(context);
+                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, oFragment).addToBackStack(null).commit();
                  } else {
                      //question list
                      QuestionFragment qFragment = new QuestionFragment(context, current.getImage());

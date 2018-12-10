@@ -13,6 +13,10 @@
     <string name="start_placeholderClient">Naam client</string>
     <string name="start_placeholderDatum">Datum</string>
 
+    <!--Overview scherm-->
+    <string name="overview_spanningsniveau">Spanningsniveau</string>
+    <string name="overview_aantal">Aantal keer gescoord</string>
+
     <!--Informatie-->
     <string name="InformatieRoodMate">Overspannen : De cliënt is overprikkeld en gaat door het lint. De cliënt heeft geen controle meer over zijn/haar gedrag. Dit komt tot uiting door schreeuwen, agressie naar de begeleider (schoppen, slaan, bijten etc.) of verwonding van zichzelf (krabben, bijten etc.).</string>
     <string name="InformatieRoodRichting">Zeer negatieve spanning – (zeer) hoge negativiteit: De cliënt toont duidelijk een (zeer) negatieve expressie. De cliënt is boos, kwaad, woest, (extreem) gefrustreerd, (zeer) angstig, gestrest of overspannen. De cliënt toont (licht) agressief/aanvallend gedrag naar de begeleiding en de cliënt kan de controle over zijn/haar gedrag verliezen; de cliënt schreeuwt/gilt, gooit met voorwerpen, maakt dingen stuk, vernield zijn/haar omgeving, huilt, is ontroostbaar, beeft (oncontroleerbaar) of verwondt zichzelf (ernstig).</string>

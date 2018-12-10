@@ -1,6 +1,7 @@
 package com.example.melanie.appaens.fragment;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,9 +15,10 @@ import com.example.melanie.appaens.R;
  */
 public class OverviewFragment extends Fragment {
 
+    private Context context;
 
-    public OverviewFragment() {
-        // Required empty public constructor
+    public OverviewFragment(Context context) {
+        this.context = context;
     }
 
 
