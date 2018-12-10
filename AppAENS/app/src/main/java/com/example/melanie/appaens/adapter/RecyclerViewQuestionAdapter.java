@@ -43,6 +43,7 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
         this.mQuestionList = mQuestionList;
         colorList = data.getColors();
         mCategorieList = data.getCategories();
+        buttonList = new Button[4][7];
     }
 
     @NonNull
@@ -56,11 +57,9 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
     public void onBindViewHolder(@NonNull final RecyclerViewQuestionAdapter.ViewHolderInformatie holder, final int position) {
         // set question text
         holder.mQuestion.setText(mQuestionList.get(position).getQuestion());
-
         print();
 
         // save all buttons in a list
-        buttonList = new Button[4][7];
         buttonList[position][0] = holder.mButtonRed;
         buttonList[position][1] = holder.mButtonOrange;
         buttonList[position][2] = holder.mButtonYellow;
@@ -71,9 +70,9 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
 
         // set all the buttons
         for (int i = 0; i < 7; i++) {
-
             setButton(buttonList[position][i], i, 0, mQuestionList.get(position));
 
+            // if answer is already set, then add border
             switch (mQuestionList.get(position).getAnswerClient()){
                 case 0: setButton(buttonList[position][i], i, 0, mQuestionList.get(position));
                     break;
@@ -168,10 +167,10 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
         // lijst met 1 attribuut, moet worden veranderd naar de hele lijst.
         question.setAnswerClient(answer);
         data.setQuestion(question);
-//        if (extraanswer == 0) {
+        if (extraanswer == 0) {
             RecyclerViewAdapter adapter = new RecyclerViewAdapter();
             adapter.notifyItemChanged(question.getCategorieId());
-//        }
+        }
         setButtonBorder(button, color, answer, question);
     }
 

@@ -52,7 +52,8 @@ public class DataSource {
                 R.drawable.houding,
                 R.drawable.mond,
                 R.drawable.neus,
-                R.drawable.voeten
+                R.drawable.voeten,
+                R.drawable.klaar
         };
         return drawableList;
     }
@@ -97,6 +98,7 @@ public class DataSource {
         categorieList.add(new Categorie(8, "Mond", 8, getQuestionListCategorie(8).size(), 0));
         categorieList.add(new Categorie(9, "Neus", 9, getQuestionListCategorie(9).size(), 0));
         categorieList.add(new Categorie(10, "Voeten", 10, getQuestionListCategorie(10).size(), 0));
+        categorieList.add(new Categorie(11, "Klaar", 11, 0, 0));
     }
 
     private void setInformatieList(){
