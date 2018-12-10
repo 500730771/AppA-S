@@ -2,14 +2,19 @@ package com.example.melanie.appaens.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.activity.AdviesActivity;
+import com.example.melanie.appaens.activity.MainActivity;
+import com.example.melanie.appaens.activity.StartActivity;
 import com.example.melanie.appaens.data.DataSource;
 import com.example.melanie.appaens.model.Question;
 
@@ -22,6 +27,8 @@ public class OverviewFragment extends Fragment {
 
     private Context context;
     private List<Question> questionList;
+
+    private Button mButtonVerder;
 
     private TextView mAantalRood;
     private TextView mAantalOranje;
@@ -50,6 +57,15 @@ public class OverviewFragment extends Fragment {
         DataSource data = new DataSource();
         questionList = data.getQuestionList();
 
+        mButtonVerder = (Button) view.findViewById(R.id.idOverview_verder);
+
+        mButtonVerder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, AdviesActivity.class));
+            }
+        });
+
         mAantalRood = (TextView) view.findViewById(R.id.idOverview_aantalRood);
         mAantalOranje = (TextView) view.findViewById(R.id.idOverview_aantalOranje);
         mAantalGeel = (TextView) view.findViewById(R.id.idOverview_aantalGeel);
@@ -57,7 +73,7 @@ public class OverviewFragment extends Fragment {
         mAantalGroen = (TextView) view.findViewById(R.id.idOverview_aantalGroen);
         mAantalRoze = (TextView) view.findViewById(R.id.idOverview_aantalRoze);
         mAantalPaars = (TextView) view.findViewById(R.id.idOverview_aantalPaars);
-        
+
         mAantalRood.setText("" + getAantal(1));
         mAantalOranje.setText("" + getAantal(2));
         mAantalGeel.setText("" + getAantal(3));

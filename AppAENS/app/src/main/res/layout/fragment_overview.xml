@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/overview_fragment"
     android:layout_width="match_parent"
@@ -14,6 +15,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         android:weightSum="3">
 
@@ -23,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/overview_spanningsniveau"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
         <TextView
             android:id="@+id/idOverview_aantal"
@@ -31,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/overview_aantal"
-            android:textSize="16sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
     </LinearLayout>
 
     <LinearLayout
@@ -142,6 +148,7 @@
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_PositiefOverspannen" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -201,4 +208,13 @@
         </LinearLayout>
     </LinearLayout>
 
+        <Button
+            android:id="@+id/idOverview_verder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorVerder"
+            android:text="@string/button_verder" />
+
+    </LinearLayout>
 </FrameLayout>

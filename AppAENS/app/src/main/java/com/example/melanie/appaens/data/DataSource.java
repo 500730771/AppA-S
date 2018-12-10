@@ -84,6 +84,19 @@ public class DataSource {
         return colorList;
     }
 
+    public int[] getAdviesImages(){
+        int[] advieslist = {
+                R.drawable.adviesno,
+                R.drawable.adviesng,
+                R.drawable.adviesnlg,
+                R.drawable.adviesn,
+                R.drawable.adviesplg,
+                R.drawable.adviespg,
+                R.drawable.adviespo
+        };
+        return advieslist;
+    }
+
     private void setCategorieList(){
         //initialize categorielist
         categorieList = new ArrayList<Categorie>();
