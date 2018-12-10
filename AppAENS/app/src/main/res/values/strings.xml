@@ -16,6 +16,13 @@
     <!--Overview scherm-->
     <string name="overview_spanningsniveau">Spanningsniveau</string>
     <string name="overview_aantal">Aantal keer gescoord</string>
+    <string name="overview_NegatiefOverspannen">Negatief Overspannen</string>
+    <string name="overview_NegatiefGespannen">Negatief Gespannen</string>
+    <string name="overview_NegatiefLichtGespannen">Negatief Licht Gespannen</string>
+    <string name="overview_Neutraal">Neutraal</string>
+    <string name="overview_PositiefLichtGespannen">Positief Licht Gespannen</string>
+    <string name="overview_PositiefGespannen">Positief Gespannen</string>
+    <string name="overview_PositiefOverspannen">Positief Overspannen</string>
 
     <!--Informatie-->
     <string name="InformatieRoodMate">Overspannen : De cliënt is overprikkeld en gaat door het lint. De cliënt heeft geen controle meer over zijn/haar gedrag. Dit komt tot uiting door schreeuwen, agressie naar de begeleider (schoppen, slaan, bijten etc.) of verwonding van zichzelf (krabben, bijten etc.).</string>

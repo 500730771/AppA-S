@@ -6,37 +6,199 @@
     android:layout_height="match_parent"
     tools:context=".fragment.OverviewFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/idOverview_spanningsniveau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/overview_spanningsniveau"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/idOverview_aantal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/overview_aantal"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+             android:layout_width="30dp"
+             android:layout_height="match_parent"
+             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/idOverview_spanningsniveau"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Spanningsniveau" />
+            <View
+                android:id="@+id/rood"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorRood"/>
 
-            <TextView
-                android:id="@+id/idOverview_aantal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Aantal keer gescoord" />
+            <View
+                android:id="@+id/oranje"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorOranje"/>
+
+            <View
+                android:id="@+id/geel"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorGeel"/>
+
+            <View
+                android:id="@+id/blauw"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorBlauw"/>
+
+            <View
+                android:id="@+id/groen"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorGroen"/>
+
+            <View
+                android:id="@+id/roze"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorRoze"/>
+
+            <View
+                android:id="@+id/paars"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorPaars"/>
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/list_overview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="8dp"
+             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/idOverview_redtext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/overview_NegatiefOverspannen" />
+
+            <TextView
+                android:id="@+id/idOverview_oranjetext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/overview_NegatiefGespannen" />
+
+            <TextView
+                android:id="@+id/idOverview_geeltext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/overview_NegatiefLichtGespannen" />
+
+            <TextView
+                android:id="@+id/idOverview_blauwtext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/overview_Neutraal" />
+
+            <TextView
+                android:id="@+id/idOverview_groentext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/overview_PositiefLichtGespannen" />
+
+            <TextView
+                android:id="@+id/idOverview_rozetext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/overview_PositiefGespannen" />
+
+            <TextView
+                android:id="@+id/idOverview_paarstext"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/overview_PositiefOverspannen" />
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="24dp"
+             android:orientation="vertical">
+
+             <TextView
+                 android:id="@+id/idOverview_aantalRood"
+                 android:layout_width="wrap_content"
+                 android:layout_height="50dp"
+                 android:gravity="center_vertical"
+                 android:text="0"/>
+
+            <TextView
+                android:id="@+id/idOverview_aantalOranje"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/idOverview_aantalGeel"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/idOverview_aantalBlauw"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/idOverview_aantalGroen"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/idOverview_aantalRoze"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/idOverview_aantalPaars"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="0"/>
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>
