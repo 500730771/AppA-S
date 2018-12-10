@@ -13,6 +13,10 @@
     <string name="start_placeholderClient">Naam client</string>
     <string name="start_placeholderDatum">Datum</string>
 
+    <!--Overview scherm-->
+    <string name="overview_spanningsniveau">Spanningsniveau</string>
+    <string name="overview_aantal">Aantal keer gescoord</string>
+
     <!--Informatie-->
     <string name="InformatieRoodMate">Overspannen : De cliënt is overprikkeld en gaat door het lint. De cliënt heeft geen controle meer over zijn/haar gedrag. Dit komt tot uiting door schreeuwen, agressie naar de begeleider (schoppen, slaan, bijten etc.) of verwonding van zichzelf (krabben, bijten etc.).</string>
     <string name="InformatieRoodRichting">Zeer negatieve spanning – (zeer) hoge negativiteit: De cliënt toont duidelijk een (zeer) negatieve expressie. De cliënt is boos, kwaad, woest, (extreem) gefrustreerd, (zeer) angstig, gestrest of overspannen. De cliënt toont (licht) agressief/aanvallend gedrag naar de begeleiding en de cliënt kan de controle over zijn/haar gedrag verliezen; de cliënt schreeuwt/gilt, gooit met voorwerpen, maakt dingen stuk, vernield zijn/haar omgeving, huilt, is ontroostbaar, beeft (oncontroleerbaar) of verwondt zichzelf (ernstig).</string>
@@ -35,6 +39,6 @@
     <string name="InformatiePaarsRichting">Positieve spanning – lage tot hoge positiviteit: De cliënt is tevreden, blij, opgewekt of licht geamuseerd. De cliënt uit positieve expressie door te (glim)lachen, in handen te klappen, op een gevarieerde en duidelijke/harde toon te vocaliseren of verbaliseren, positief te reageren op activiteiten en/of interactie met de begeleider, mee te doen en/of aandacht te vragen. De cliënt maakt contact met de begeleider door duidelijk en op een gevarieerde toon te vocaliseren, op neutrale toon te praten, door de nabijheid van begeleider te zoeken, de begeleider te imiteren of door de begeleider aan te raken, bijvoorbeeld vastpakken van de hand van de begeleider. De cliënt neemt (actief) initiatief tot interactie, contact of activiteiten. Soms gaat de interactie tussen de cliënt en de begeleider over en weer, reageert de cliënt actief op de begeleider en is zowel verbaal als non-verbaal expressief. </string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Acties</string>
+    <string name="hello_blank_fragment">OVERVIEW PAGE</string>
 
 </resources>

@@ -6,7 +6,9 @@ import android.preference.PreferenceActivity;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,8 @@ import android.widget.Toast;
 
 import com.example.melanie.appaens.R;
 import com.example.melanie.appaens.fragment.HeaderFragment;
+import com.example.melanie.appaens.fragment.OverviewFragment;
+import com.example.melanie.appaens.fragment.QuestionFragment;
 import com.example.melanie.appaens.model.Categorie;
 
 import java.util.List;
@@ -25,7 +29,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context context;
     private static Categorie current;
-    private List<Categorie> mCategorie;
+    private static List<Categorie> mCategorie;
     private static int[] mDrawableList;
 
     private View view;
@@ -55,13 +59,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
          holder.item_box.setOnClickListener(new View.OnClickListener(){
              @Override
              public void onClick(View v) {
-                 Toast.makeText(context, mCategorie.get(position).getNaam(),Toast.LENGTH_SHORT).show();
                  current = mCategorie.get(position);
 
+                 //header
                  AppCompatActivity activity = (AppCompatActivity) view.getContext();
                  HeaderFragment myFragment = new HeaderFragment();
                  activity.getSupportFragmentManager().beginTransaction().replace(R.id.header_fragment, myFragment).addToBackStack(null).commit();
 
+                 //klaar button leads to overview page
+                 //otherwise to question list page
+
+                 Log.d("RECYCLEVIEWADAPTER", "ID: " + current.getId());
+                 if (current.getId() == 11){
+                     OverviewFragment oFragment = new OverviewFragment(context);
+                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, oFragment).addToBackStack(null).commit();
+                 } else {
+                     //question list
+                     QuestionFragment qFragment = new QuestionFragment(context, current.getImage());
+                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, qFragment).addToBackStack(null).commit();
+                 }
              }
          });
     }

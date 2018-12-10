@@ -1,8 +1,5 @@
 package com.example.melanie.appaens.fragment;
 
-import android.content.Context;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -13,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.melanie.appaens.R;
-import com.example.melanie.appaens.activity.ScrollMenuActivity;
 import com.example.melanie.appaens.adapter.RecyclerViewAdapter;
 import com.example.melanie.appaens.data.DataSource;
 import com.example.melanie.appaens.model.Categorie;
@@ -37,11 +33,10 @@ public class HeaderFragment extends Fragment {
         rootView.setTag(TAG);
 
         DataSource data = new DataSource();
-        mDrawableList = data.getDrawables();
+        mDrawableList = data.getDrawablesCategorie();
         RecyclerViewAdapter adapter = new RecyclerViewAdapter();
         if (adapter.getCurrentCategorie() != null){
             mCategorie = adapter.getCurrentCategorie();
-
             Log.d(TAG, "SET HEADER TO CATEGORIE "+ mCategorie.getImage());
         } else {
             mCategorie = data.getCategories().get(0);

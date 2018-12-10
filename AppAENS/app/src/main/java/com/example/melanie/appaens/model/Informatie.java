@@ -1,24 +1,26 @@
 package com.example.melanie.appaens.model;
 
-public class Informatie {
-    private int kleur;
+import java.io.Serializable;
+
+public class Informatie implements Serializable {
+    private int id;
     private String shortText;
     private String mateSpanningText;
     private String richtingSpanningText;
 
-    public Informatie(int kleur, String shortText, String mateSpanningText, String richtingSpanningText){
-        this.kleur = kleur;
+    public Informatie (int id, String shortText, String mateSpanningText, String richtingSpanningText){
+        this.id = id;
         this.shortText = shortText;
         this.mateSpanningText = mateSpanningText;
         this.richtingSpanningText = richtingSpanningText;
     }
 
-    public int getKleur() {
-        return kleur;
+    public int getId() {
+        return id;
     }
 
-    public void setKleur(int kleur) {
-        this.kleur = kleur;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getShortText() {
