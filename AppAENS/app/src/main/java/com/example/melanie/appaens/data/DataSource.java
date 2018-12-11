@@ -176,5 +176,15 @@ public class DataSource {
         }
         return list;
     }
+
+    public int getScoreButton(int kleurid){
+        int aantal = 0;
+        for (Question q : questionList){
+            if (q.getAnswerClient() == kleurid){
+                aantal++;
+            }
+        }
+        return aantal;
+    }
 }
 

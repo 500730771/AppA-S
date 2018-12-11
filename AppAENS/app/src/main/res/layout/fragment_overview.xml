@@ -54,43 +54,43 @@
             <View
                 android:id="@+id/rood"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@color/colorRood"/>
 
             <View
                 android:id="@+id/oranje"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@color/colorOranje"/>
 
             <View
                 android:id="@+id/geel"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@color/colorGeel"/>
 
             <View
                 android:id="@+id/blauw"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@color/colorBlauw"/>
 
             <View
                 android:id="@+id/groen"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@color/colorGroen"/>
 
             <View
                 android:id="@+id/roze"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@color/colorRoze"/>
 
             <View
                 android:id="@+id/paars"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@color/colorPaars"/>
         </LinearLayout>
 
@@ -103,49 +103,49 @@
             <TextView
                 android:id="@+id/idOverview_redtext"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_NegatiefOverspannen" />
 
             <TextView
                 android:id="@+id/idOverview_oranjetext"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_NegatiefGespannen" />
 
             <TextView
                 android:id="@+id/idOverview_geeltext"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_NegatiefLichtGespannen" />
 
             <TextView
                 android:id="@+id/idOverview_blauwtext"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_Neutraal" />
 
             <TextView
                 android:id="@+id/idOverview_groentext"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_PositiefLichtGespannen" />
 
             <TextView
                 android:id="@+id/idOverview_rozetext"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_PositiefGespannen" />
 
             <TextView
                 android:id="@+id/idOverview_paarstext"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="@string/overview_PositiefOverspannen" />
 
@@ -160,49 +160,49 @@
              <TextView
                  android:id="@+id/idOverview_aantalRood"
                  android:layout_width="wrap_content"
-                 android:layout_height="50dp"
+                 android:layout_height="40dp"
                  android:gravity="center_vertical"
                  android:text="0"/>
 
             <TextView
                 android:id="@+id/idOverview_aantalOranje"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="0"/>
 
             <TextView
                 android:id="@+id/idOverview_aantalGeel"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="0"/>
 
             <TextView
                 android:id="@+id/idOverview_aantalBlauw"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="0"/>
 
             <TextView
                 android:id="@+id/idOverview_aantalGroen"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="0"/>
 
             <TextView
                 android:id="@+id/idOverview_aantalRoze"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="0"/>
 
             <TextView
                 android:id="@+id/idOverview_aantalPaars"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:gravity="center_vertical"
                 android:text="0"/>
         </LinearLayout>
@@ -214,7 +214,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:background="@color/colorVerder"
-            android:text="@string/button_verder" />
-
+            android:text="Checklist afronden" />
     </LinearLayout>
 </FrameLayout>

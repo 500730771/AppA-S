@@ -1,7 +1,9 @@
 package com.example.melanie.appaens.fragment;
 
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -62,7 +64,17 @@ public class OverviewFragment extends Fragment {
         mButtonVerder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, AdviesActivity.class));
+                new AlertDialog.Builder(context)
+                        .setMessage("Weet u zeker dat u de checklist wilt afronden?")
+                        .setCancelable(false)
+                        .setPositiveButton("Ja", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                startActivity(new Intent(context, AdviesActivity.class));
+                            }
+                        })
+                        .setNegativeButton("Nee", null)
+                        .show();
+
             }
         });
 
@@ -74,26 +86,14 @@ public class OverviewFragment extends Fragment {
         mAantalRoze = (TextView) view.findViewById(R.id.idOverview_aantalRoze);
         mAantalPaars = (TextView) view.findViewById(R.id.idOverview_aantalPaars);
 
-        mAantalRood.setText("" + getAantal(1));
-        mAantalOranje.setText("" + getAantal(2));
-        mAantalGeel.setText("" + getAantal(3));
-        mAantalBlauw.setText("" + getAantal(4));
-        mAantalGroen.setText("" + getAantal(5));
-        mAantalRoze.setText("" + getAantal(6));
-        mAantalPaars.setText("" + getAantal(7));
+        mAantalRood.setText("" + data.getScoreButton(1));
+        mAantalOranje.setText("" + data.getScoreButton(2));
+        mAantalGeel.setText("" + data.getScoreButton(3));
+        mAantalBlauw.setText("" + data.getScoreButton(4));
+        mAantalGroen.setText("" + data.getScoreButton(5));
+        mAantalRoze.setText("" + data.getScoreButton(6));
+        mAantalPaars.setText("" + data.getScoreButton(7));
 
         return view;
-    }
-
-    private int getAantal(int kleurid){
-        int aantal = 0;
-
-        for (Question q : questionList){
-            if (q.getAnswerClient() == kleurid){
-                aantal++;
-            }
-        }
-
-        return aantal;
     }
 }

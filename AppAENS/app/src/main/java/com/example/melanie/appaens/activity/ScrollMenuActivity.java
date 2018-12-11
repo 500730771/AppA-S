@@ -1,5 +1,6 @@
 package com.example.melanie.appaens.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -68,7 +69,10 @@ public class ScrollMenuActivity extends AppCompatActivity {
     //transition overrides
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        Intent intent = new Intent(this , StartActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        startActivity(intent);
         overridePendingTransition(R.anim.left_right, R.anim.right_left);
     }
 }
