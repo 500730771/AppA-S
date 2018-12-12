@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.data.DataSource;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DataSource data = new DataSource();
 
         Button mVerder = (Button) findViewById(R.id.idHome_button);
 

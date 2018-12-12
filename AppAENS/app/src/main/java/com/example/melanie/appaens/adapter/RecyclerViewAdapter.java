@@ -70,7 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                  //otherwise to question list page
 
                  Log.d("RECYCLEVIEWADAPTER", "ID: " + current.getId());
-                 if (current.getId() == 11){
+                 if (current.getId() == 13){
                      OverviewFragment oFragment = new OverviewFragment(context);
                      activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, oFragment).addToBackStack(null).commit();
                  } else {

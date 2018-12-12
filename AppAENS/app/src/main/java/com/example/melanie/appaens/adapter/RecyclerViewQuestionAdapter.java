@@ -43,7 +43,7 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
         this.mQuestionList = mQuestionList;
         colorList = data.getColors();
         mCategorieList = data.getCategories();
-        buttonList = new Button[4][7];
+        buttonList = new Button[mQuestionList.size()][7];
     }
 
     @NonNull
