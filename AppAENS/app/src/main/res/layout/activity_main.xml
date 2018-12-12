@@ -4,35 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/idHome_titel"
+        android:gravity="center"
+        android:textStyle="bold"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:text="@string/home_titel"
-        app:layout_constraintBottom_toTopOf="@+id/idHome_toelichting"
-        app:layout_constraintHorizontal_bias="0.131"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:textSize="20dp"
         android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/idHome_toelichting"
-        android:layout_width="wrap_content"
-        android:layout_height="47dp"
-        android:layout_marginBottom="320dp"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_marginTop="56dp"
+        android:gravity="center"
         android:text="@string/home_toelichting"
+
+
         android:textColor="@color/colorBlack"
-        app:layout_constraintBottom_toTopOf="@+id/idHome_button"
-        app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idHome_titel" />
 
     <Button
         android:id="@+id/idHome_button"
@@ -43,8 +48,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="32dp"
-        android:text="@string/button_verder"
         android:background="@color/colorVerder"
+        android:text="@string/button_verder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"

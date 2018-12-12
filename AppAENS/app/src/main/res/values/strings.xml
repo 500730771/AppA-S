@@ -5,8 +5,14 @@
     <string name="button_verder">Verder</string>
 
     <!--Home scherm-->
-    <string name="home_titel">Toelichting</string>
-    <string name="home_toelichting">Random tekst want hier komt de toelichting</string>
+    <string name="home_titel">        Welkom bij de A&amp;S App!</string>
+    <string name="home_toelichting">
+
+Deze ‘Aansluiten &amp; Stimuleren’-App is bedoeld voor ouders en begeleiders van mensen met een ernstig meervoudige beperking (EMB). Soms is het moeilijk om het gedrag, de behoeften en het spanningsniveau van een persoon met EMB te ‘lezen’. De App helpt hierbij en geeft handvaten om met het eigen gedrag aan te sluiten bij het gedrag van het kind / de cliënt.
+
+Veel succes!
+
+Vragen en/of opmerkingen? Neem gerust contact op met ons! (info@socialerelatiesenict.nl)</string>
 
     <!--Start scherm-->
     <string name="start_placeholderObservator">Naam observator</string>
