@@ -20,8 +20,9 @@
         <activity android:name=".activity.ScrollMenuActivity" />
         <activity
             android:name=".activity.Popup"
-            android:theme="@style/AppTheme.CustomTheme"></activity>
-        <activity android:name=".activity.AdviesActivity"></activity>
+            android:theme="@style/AppTheme.CustomTheme" />
+        <activity android:name=".activity.AdviesActivity" />
+        <activity android:name=".activity.BedanktActivity"></activity>
     </application>
 
 </manifest>

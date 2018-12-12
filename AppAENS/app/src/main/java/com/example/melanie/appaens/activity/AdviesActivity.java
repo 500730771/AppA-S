@@ -1,5 +1,6 @@
 package com.example.melanie.appaens.activity;
 
+import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class AdviesActivity extends AppCompatActivity {
 
-    private Button mButtonVerder;
+    private Button mAfrondenChecklist;
 
     private Button mButton0;
     private Button mButton1;
@@ -42,6 +43,8 @@ public class AdviesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advies);
         Log.d("ADVIESACTIVITY","ADVIESPAGINA");
+
+        mAfrondenChecklist = (Button) findViewById(R.id.idAdvies_afronden);
 
         mButton0 = (Button) findViewById(R.id.idAdvies_Button0);
         mButton1 = (Button) findViewById(R.id.idAdvies_Button1);
@@ -110,7 +113,13 @@ public class AdviesActivity extends AppCompatActivity {
         mImage6.setImageResource(adviesList[scores.get(6).getButtonId()]);
 
         //click verder button
-
+        mAfrondenChecklist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AdviesActivity.this, BedanktActivity.class));
+                overridePendingTransition(R.anim.enter, R.anim.exit);
+            }
+        });
 
         //click button
         mButton0.setOnClickListener(new View.OnClickListener() {

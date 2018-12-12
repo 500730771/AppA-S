@@ -1,6 +1,7 @@
 package com.example.melanie.appaens.activity;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +18,7 @@ public class StartActivity extends AppCompatActivity {
     private String client;
     private String observator;
     private String datum;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
