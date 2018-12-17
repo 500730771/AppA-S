@@ -53,8 +53,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
-         holder.item_title.setText(mCategorie.get(position).getBeantwoordeVragen() + "/" + mCategorie.get(position).getMaxVragen());
-         holder.item_image.setImageResource(mDrawableList[mCategorie.get(position).getImage()]);
+        if(mCategorie.size() -1  == position){
+            holder.item_title.setText("Klaar");
+
+        }else {
+            holder.item_title.setText(mCategorie.get(position).getBeantwoordeVragen() + "/" + mCategorie.get(position).getMaxVragen());
+        }
+        holder.item_image.setImageResource(mDrawableList[mCategorie.get(position).getImage()]);
 
          holder.item_box.setOnClickListener(new View.OnClickListener(){
              @Override
