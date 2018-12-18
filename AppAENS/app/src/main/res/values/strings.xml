@@ -1,12 +1,34 @@
 <resources>
     <string name="app_name">A&amp;S</string>
 
-    <!--button-->
-    <string name="button_verder">Verder</string>
+    <!--Homescherm-->
+    <!--Button Homescherm-->
+    <string name="home_button">Start A&amp;S-checklist</string>
 
-    <!--Home scherm-->
-    <string name="home_titel">Toelichting</string>
-    <string name="home_toelichting">Random tekst want hier komt de toelichting</string>
+    <string name="home_titel">        Welkom bij de A&amp;S App!</string>
+    <string name="home_toelichting">
+
+Deze ‘Aansluiten &amp; Stimuleren’-App is bedoeld voor ouders en begeleiders van mensen met een ernstig meervoudige beperking (EMB). Soms is het moeilijk om het gedrag, de behoeften en het spanningsniveau van een persoon met EMB te ‘lezen’. De App helpt hierbij en geeft handvaten om met het eigen gedrag aan te sluiten bij het gedrag van het kind / de cliënt.
+
+Veel succes!
+
+Vragen en/of opmerkingen? Neem gerust contact op met ons! (info@socialerelatiesenict.nl)</string>
+
+    <!--Uitleg scherm-->
+    <!--Button Uitlegscherm-->
+    <string name="uitleg_button">Verder</string>
+
+    <string name="uitleg_titel">        Hoe werkt de A&amp;S-checklist </string>
+
+    <string name="uitleg_toelichting">
+        \u2022 Observeer de houdingsvormen, gedragingen, bewegingen, geluiden en acties van de persoon met EMB.\n
+        \n
+        \u2022 Zoek onder de 13 categorieën de items op die van toepassing en beoordeel het spanningsniveau per geobserveerd item (niet alle items worden dus ingevuld, alleen de items die van toepassing zijn!).\n
+        \n
+        \u2022 Klik op \'doorgaan\' als alle items die van toepassing zijn, zijn gescoord.\n
+        \n
+        \u2022 Er verschijnt een overzicht van het spanningsniveau van de geobserveerde persoon en handvaten voor de ouder/begeleider om aan te sluiten bij dat spanningsniveau.
+</string>
 
     <!--Start scherm-->
     <string name="start_placeholderObservator">Naam observator</string>
