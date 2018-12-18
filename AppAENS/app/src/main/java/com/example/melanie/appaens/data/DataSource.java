@@ -33,6 +33,12 @@ public class DataSource {
         }
     }
 
+    public void setObservatie(Observatie observatie){
+        this.observatie = observatie;
+    }
+
+    public Observatie getObservatie(){return observatie;}
+
     public int[] getAnswers(){
         int[] answerList = {
                 0,1,2,3,4,5,6,7

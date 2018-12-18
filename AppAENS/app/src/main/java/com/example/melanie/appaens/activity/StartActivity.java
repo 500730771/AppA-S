@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.data.DataSource;
 import com.example.melanie.appaens.model.Observatie;
 
 import java.util.Date;
@@ -34,6 +35,9 @@ public class StartActivity extends AppCompatActivity {
         datum = mDatum.getText().toString();
 
         Observatie observatie = new Observatie(client, observator, datum, false);
+
+        DataSource data = new DataSource();
+        data.setObservatie(observatie);
 
         Button mVerder = (Button) findViewById(R.id.idStart_button);
 
