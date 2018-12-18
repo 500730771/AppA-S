@@ -2,6 +2,7 @@ package com.example.melanie.appaens.activity;
 
 import android.content.Intent;
 import android.provider.ContactsContract;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,10 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+
+        ActionBar toolbar = getSupportActionBar();
+        toolbar.setDisplayHomeAsUpEnabled(true);
+        toolbar.setTitle("Checklist");
 
         EditText mObservator = (EditText) findViewById(R.id.idStart_observator);
         EditText mClient = (EditText) findViewById(R.id.idStart_naamclient);
@@ -56,5 +61,11 @@ public class StartActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         overridePendingTransition(R.anim.left_right, R.anim.right_left);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

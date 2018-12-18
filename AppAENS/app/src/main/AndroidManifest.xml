@@ -12,7 +12,6 @@
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,7 +22,8 @@
             android:theme="@style/AppTheme.CustomTheme" />
         <activity android:name=".activity.AdviesActivity" />
         <activity android:name=".activity.BedanktActivity" />
-        <activity android:name=".activity.UitlegActivity"></activity>
+        <activity android:name=".activity.UitlegActivity" />
+        <activity android:name=".activity.InfoActivity"></activity>
     </application>
 
 </manifest>
