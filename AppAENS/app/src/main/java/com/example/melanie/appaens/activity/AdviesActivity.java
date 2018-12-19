@@ -67,7 +67,7 @@ public class AdviesActivity extends AppCompatActivity {
         int[] adviesList = data.getAdviesImages();
 
         List<Score> scores = new ArrayList<Score>();
-        String[] textlijst = {"Negatief Overspannen","Negatief Gespannen","Negatief Licht Gespannen","Neutraal","Positief Licht Gespannen","Positief Gespannen","Positief Overspannen"};
+        String[] textlijst = {"Negatief Overspannen","Negatief Gespannen","Negatief Licht Gespannen","Neutraal / Ontspannen","Positief Licht Gespannen","Positief Gespannen","Positief Overspannen"};
 
         for (int i = 0; i < 7; i++){
             List<Question> list = data.getQuestionListCategorie(i);
