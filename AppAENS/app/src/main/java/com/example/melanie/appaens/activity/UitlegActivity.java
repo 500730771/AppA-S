@@ -21,8 +21,6 @@ public class UitlegActivity extends AppCompatActivity {
         toolbar.setDisplayHomeAsUpEnabled(true);
         toolbar.setTitle("Uitleg");
 
-        DataSource data = new DataSource();
-
         Button mVerder = (Button) findViewById(R.id.idUitleg_verder);
 
         mVerder.setOnClickListener(new View.OnClickListener() {

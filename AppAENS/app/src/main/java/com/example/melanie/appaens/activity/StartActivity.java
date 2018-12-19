@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
 import com.example.melanie.appaens.R;
 import com.example.melanie.appaens.data.DataSource;
@@ -21,6 +22,7 @@ public class StartActivity extends AppCompatActivity {
     private String observator;
     private String datum;
     private String email;
+    private boolean video;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,21 +33,32 @@ public class StartActivity extends AppCompatActivity {
         toolbar.setDisplayHomeAsUpEnabled(true);
         toolbar.setTitle("Checklist");
 
-        EditText mObservator = (EditText) findViewById(R.id.idStart_observator);
+        EditText mObservator = (EditText) findViewById(R.id.idStart_naamobservator);
         EditText mClient = (EditText) findViewById(R.id.idStart_naamclient);
         EditText mDatum= (EditText) findViewById(R.id.idStart_datum);
+        EditText mEmail= (EditText) findViewById(R.id.idStart_email);
 
         client = mClient.getText().toString();
         observator = mObservator.getText().toString();
         datum = mDatum.getText().toString();
+        email = mEmail.getText().toString();
 
-        Observatie observatie = new Observatie(client, observator, datum, false);
+        RadioButton rClient = (RadioButton) findViewById(R.id.idStart_radioclient);
+        RadioButton rVideo = (RadioButton) findViewById(R.id.idStart_radioVideo);
+
+        if (rClient.isChecked()){
+            video = false;
+        } else if (rVideo.isChecked())
+            video = true;
 
         DataSource data = new DataSource();
+        data.clearData();
+        data.setData(video);
+
+        Observatie observatie = new Observatie(client, observator, datum, video);
         data.setObservatie(observatie);
 
         Button mVerder = (Button) findViewById(R.id.idStart_button);
-
         mVerder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -39,9 +39,9 @@ public class BedanktActivity extends AppCompatActivity {
 
         Log.d("BEDANKTACTIVITY", "Make pdf");
 
-        String pdfcontent = generateHelloWorldPDF();
-        outputToScreen(R.id.text, pdfcontent);
-        outputToFile("helloworld.pdf",pdfcontent,"ISO-8859-1");
+//        String pdfcontent = generateHelloWorldPDF();
+//        outputToScreen(R.id.text, pdfcontent);
+//        outputToFile("helloworld.pdf",pdfcontent,"ISO-8859-1");
 
 //        PDFWriter writer = new PDFWriter(PaperSize.FOLIO_WIDTH, PaperSize.FOLIO_HEIGHT);
 //        writer.setFont(StandardFonts.SUBTYPE, StandardFonts.TIMES_BOLD, StandardFonts.WIN_ANSI_ENCODING);

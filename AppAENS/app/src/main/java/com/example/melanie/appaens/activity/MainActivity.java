@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         ActionBar toolbar = getSupportActionBar();
         toolbar.setTitle("A&S");
 
-        DataSource data = new DataSource();
-
         Button mVerder = (Button) findViewById(R.id.idHome_button);
 
         mVerder.setOnClickListener(new View.OnClickListener() {

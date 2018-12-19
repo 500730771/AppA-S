@@ -24,9 +24,20 @@ Deze ‘Aansluiten &amp; Stimuleren’-App is bedoeld voor ouders en begeleiders
 </string>
 
     <!--Start scherm-->
-    <string name="start_placeholderObservator">Naam observator</string>
-    <string name="start_placeholderClient">Naam client</string>
+    <string name="start_buttonverder">Start</string>
+
+    <string name="start_placeholderObservator">Naam Observator</string>
+    <string name="start_placeholderClient">Naam Cliënt</string>
     <string name="start_placeholderDatum">Datum</string>
+    <string name="start_placeholderEmail">Email</string>
+
+    <string name="start_radioclient">Alléén cliënt-observatie</string>
+    <string name="start_radiovideo">Videofeedback-observatie</string>
+
+    <string name="start_textClient">De A&amp;S-checklist is op twee verschillende manieren te gebruiken;\n\n1. Door een ouder/begeleider in interactie met de persoon met EMB, alléén de cliënt wordt geobserveerd.</string>
+    <string name="start_textVideo">2. Voor gebruik tijdens een videofeedbacksessie, zowel de cliënt als de ouder/begeleider wordt geobservererd.</string>
+    <string name="start_textStartchecklist">Maak uw keuze en start de A&amp;S-checklist!</string>
+
 
     <!--Overview scherm-->
     <string name="overview_spanningsniveau">Spanningsniveau</string>
@@ -34,7 +45,7 @@ Deze ‘Aansluiten &amp; Stimuleren’-App is bedoeld voor ouders en begeleiders
     <string name="overview_NegatiefOverspannen">Negatief Overspannen</string>
     <string name="overview_NegatiefGespannen">Negatief Gespannen</string>
     <string name="overview_NegatiefLichtGespannen">Negatief Licht Gespannen</string>
-    <string name="overview_Neutraal">Neutraal</string>
+    <string name="overview_Neutraal">Neutraal / Ontspannen</string>
     <string name="overview_PositiefLichtGespannen">Positief Licht Gespannen</string>
     <string name="overview_PositiefGespannen">Positief Gespannen</string>
     <string name="overview_PositiefOverspannen">Positief Overspannen</string>

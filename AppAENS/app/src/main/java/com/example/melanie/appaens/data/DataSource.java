@@ -18,19 +18,35 @@ import java.util.List;
 public class DataSource {
 
     private static Observatie observatie;
-    private static Informatie informatie;
     private static List<Categorie> categorieList;
     private static List<Informatie> informatieList;
     private static List<Question> questionList;
-    private static boolean firstrun = true;
+
+    private static int[] drawablesCategorieList;
+
+    private static boolean video;
 
     public DataSource(){
-        if (firstrun){
-            setInformatieList();
-            setQuestionList();
-            setCategorieList();
-            firstrun = false;
+
+    }
+
+    public void setData(boolean video){
+        this.video = video;
+        setInformatieList();
+        setQuestionList();
+        setCategorieList();
+        setDrawablesCategorieList();
+        if (video){
+            addExtraCategorie();
         }
+    }
+
+    public void clearData(){
+        if (categorieList != null)
+            categorieList.clear();
+        if (questionList != null)
+            questionList.clear();
+        drawablesCategorieList = new int[]{};
     }
 
     public void setObservatie(Observatie observatie){
@@ -47,23 +63,46 @@ public class DataSource {
     }
 
     public int[] getDrawablesCategorie(){
-        int[] drawableList = {
-                R.drawable.gehelelichaam,
-                R.drawable.houding,
-                R.drawable.handen,
-                R.drawable.acties,
-                R.drawable.geluid,
-                R.drawable.bovenlichaam,
-                R.drawable.onderlichaam,
-                R.drawable.voeten,
-                R.drawable.hoofd,
-                R.drawable.ogen,
-                R.drawable.mond,
-                R.drawable.armen,
-                R.drawable.neus,
-                R.drawable.klaar
-        };
-        return drawableList;
+        return drawablesCategorieList;
+    }
+
+    private void setDrawablesCategorieList(){
+        if (video){
+            int[] drawableList = {
+                    R.drawable.gehelelichaam,
+                    R.drawable.houding,
+                    R.drawable.handen,
+                    R.drawable.acties,
+                    R.drawable.geluid,
+                    R.drawable.bovenlichaam,
+                    R.drawable.onderlichaam,
+                    R.drawable.voeten,
+                    R.drawable.hoofd,
+                    R.drawable.ogen,
+                    R.drawable.mond,
+                    R.drawable.armen,
+                    R.drawable.neus,
+                    R.drawable.nietsensitief,
+                    R.drawable.klaar
+            };drawablesCategorieList = drawableList;
+        }else{
+            int[] drawableList = {
+                    R.drawable.gehelelichaam,
+                    R.drawable.houding,
+                    R.drawable.handen,
+                    R.drawable.acties,
+                    R.drawable.geluid,
+                    R.drawable.bovenlichaam,
+                    R.drawable.onderlichaam,
+                    R.drawable.voeten,
+                    R.drawable.hoofd,
+                    R.drawable.ogen,
+                    R.drawable.mond,
+                    R.drawable.armen,
+                    R.drawable.neus,
+                    R.drawable.klaar
+            };drawablesCategorieList = drawableList;
+        }
     }
 
     public int[] getDrawablesInformatie(){
@@ -105,7 +144,7 @@ public class DataSource {
         return advieslist;
     }
 
-    private void setCategorieList(){
+    private void setCategorieList() {
         //initialize categorielist
         categorieList = new ArrayList<Categorie>();
         categorieList.add(new Categorie(0, "Gehele lichaam", 0, getQuestionListCategorie(0).size(), 0));
@@ -121,7 +160,12 @@ public class DataSource {
         categorieList.add(new Categorie(10, "Mond", 10, getQuestionListCategorie(10).size(), 0));
         categorieList.add(new Categorie(11, "Armen", 11, getQuestionListCategorie(11).size(), 0));
         categorieList.add(new Categorie(12, "Neus", 12, getQuestionListCategorie(12).size(), 0));
-        categorieList.add(new Categorie(13, "Klaar", 13, 0, 0));
+        if (video) {
+            categorieList.add(new Categorie(13, "Niet sensitief", 13, getQuestionListCategorie(13).size(), 0));
+            categorieList.add(new Categorie(14, "Klaar", 14, 0, 0));
+        } else{
+            categorieList.add(new Categorie(13, "Klaar", 13, 0, 0));
+        }
     }
 
     private void setInformatieList(){
@@ -184,11 +228,6 @@ public class DataSource {
         questionList.add(new Question(2, "Slaat zichzelf / voorwerp / ander"));
         questionList.add(new Question(2, "Kleedt zichzelf aan/uit"));
         questionList.add(new Question(2, "Bij ander kleding aan / uit doen"));
-
-
-
-
-
 
 // Acties
         questionList.add(new Question(3, "Spelen / rollenspel"));
