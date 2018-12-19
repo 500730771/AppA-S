@@ -22,22 +22,203 @@
         android:id="@+id/header_fragment"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idMenu_NavigationList">
     </FrameLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/idMenu_InformationList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        android:scrollbars="none"
+        android:layout_height="25dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         app:layout_constraintTop_toBottomOf="@+id/header_fragment"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/idInformatie_boxred"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idInformatie_boxorange"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/idInformatie_colorred"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorRood" />
+
+            <TextView
+                android:id="@+id/idInformatie_textred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/idInformatie_boxorange"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idInformatie_boxyellow"
+            app:layout_constraintStart_toEndOf="@id/idInformatie_boxred"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/idInformatie_colororange"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorOranje" />
+
+            <TextView
+                android:id="@+id/idInformatie_textorange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/idInformatie_boxyellow"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idInformatie_boxblue"
+            app:layout_constraintStart_toEndOf="@id/idInformatie_boxorange"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/idInformatie_coloryellow"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorGeel" />
+
+            <TextView
+                android:id="@+id/idInformatie_textyellow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/idInformatie_boxblue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idInformatie_boxgreen"
+            app:layout_constraintStart_toEndOf="@id/idInformatie_boxyellow"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/idInformatie_colorblue"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorBlauw" />
+
+            <TextView
+                android:id="@+id/idInformatie_textblue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/idInformatie_boxgreen"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idInformatie_boxpink"
+            app:layout_constraintStart_toEndOf="@id/idInformatie_boxblue"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/idInformatie_colorgreen"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorGroen" />
+
+            <TextView
+                android:id="@+id/idInformatie_textgreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="+1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/idInformatie_boxpink"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/idInformatie_boxpurple"
+            app:layout_constraintStart_toEndOf="@id/idInformatie_boxgreen"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/idInformatie_colorpink"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorRoze" />
+
+            <TextView
+                android:id="@+id/idInformatie_textpink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="+2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/idInformatie_boxpurple"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/idInformatie_boxpink"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/idInformatie_colorpurple"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/colorPaars" />
+
+            <TextView
+                android:id="@+id/idInformatie_textpurple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="+3" />
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/idMenu_InformationList"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="4dp"-->
+        <!--android:layout_marginBottom="4dp"-->
+        <!--android:scrollbars="none"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/header_fragment"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"/>-->
 
     <FrameLayout
         android:id="@+id/question_fragment"
@@ -53,5 +234,7 @@
         app:layout_constraintTop_toBottomOf="@+id/idMenu_InformationList"
         app:layout_constraintVertical_bias="1.0"
         ></FrameLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
