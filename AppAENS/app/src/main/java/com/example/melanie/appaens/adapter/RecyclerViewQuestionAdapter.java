@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -167,10 +168,8 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
         // lijst met 1 attribuut, moet worden veranderd naar de hele lijst.
         question.setAnswerClient(answer);
         data.setQuestion(question);
-        if (extraanswer == 0) {
-            RecyclerViewAdapter adapter = new RecyclerViewAdapter();
-            adapter.notifyItemChanged(question.getCategorieId());
-        }
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter();
+        adapter.notifyItemChanged(question.getCategorieId());
         setButtonBorder(button, color, answer, question);
     }
 

@@ -324,7 +324,7 @@ public class DataSource {
             if (q.getId() == question.getId()){
                 q = question;
                 //set categorie + 1 answered question
-                categorieList.get(question.getCategorieId()).setBeantwoordeVragen(categorieList.get(question.getCategorieId()).getBeantwoordeVragen() + 1);
+//                categorieList.get(question.getCategorieId()).setBeantwoordeVragen(categorieList.get(question.getCategorieId()).getBeantwoordeVragen() + 1);
             }
         }
     }

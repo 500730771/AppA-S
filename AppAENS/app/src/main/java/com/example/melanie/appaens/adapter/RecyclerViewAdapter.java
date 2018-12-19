@@ -18,10 +18,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.melanie.appaens.R;
+import com.example.melanie.appaens.data.DataSource;
 import com.example.melanie.appaens.fragment.HeaderFragment;
 import com.example.melanie.appaens.fragment.OverviewFragment;
 import com.example.melanie.appaens.fragment.QuestionFragment;
 import com.example.melanie.appaens.model.Categorie;
+import com.example.melanie.appaens.model.Question;
 
 import java.util.List;
 
@@ -51,13 +53,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new ViewHolder(view);
     }
 
+    private int getBeantwoordeVragen(int categorieId){
+        DataSource data = new DataSource();
+        List<Question> list = data.getQuestionListCategorie(categorieId);
+        int aantal = 0;
+        for (Question q : list){
+            if (q.getAnswerClient() !=0)
+                aantal++;
+        }
+        return aantal;
+    }
+
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         if(mCategorie.size() -1  == position){
             holder.item_title.setText("Klaar");
 
         }else {
-            holder.item_title.setText(mCategorie.get(position).getBeantwoordeVragen() + "/" + mCategorie.get(position).getMaxVragen());
+            holder.item_title.setText(getBeantwoordeVragen(position) + "/" + mCategorie.get(position).getMaxVragen());
         }
         holder.item_image.setImageResource(mDrawableList[mCategorie.get(position).getImage()]);
 
