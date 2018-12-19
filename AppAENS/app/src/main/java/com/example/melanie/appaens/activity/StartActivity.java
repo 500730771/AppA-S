@@ -43,17 +43,11 @@ public class StartActivity extends AppCompatActivity {
         datum = mDatum.getText().toString();
         email = mEmail.getText().toString();
 
-        RadioButton rClient = (RadioButton) findViewById(R.id.idStart_radioclient);
-        RadioButton rVideo = (RadioButton) findViewById(R.id.idStart_radioVideo);
-
-        if (rClient.isChecked()){
-            video = false;
-        } else if (rVideo.isChecked())
-            video = true;
-
-        DataSource data = new DataSource();
+        final RadioButton rClient = (RadioButton) findViewById(R.id.idStart_radioclient);
+        final RadioButton rVideo = (RadioButton) findViewById(R.id.idStart_radioVideo);
+        
+        final DataSource data = new DataSource();
         data.clearData();
-        data.setData(video);
 
         Observatie observatie = new Observatie(client, observator, datum, video);
         data.setObservatie(observatie);
@@ -62,6 +56,11 @@ public class StartActivity extends AppCompatActivity {
         mVerder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (rClient.isChecked()){
+                    video = false;
+                } else if (rVideo.isChecked())
+                    video = true;
+                data.setData(video);
                 startActivity(new Intent(StartActivity.this, ScrollMenuActivity.class));
                 overridePendingTransition(R.anim.enter, R.anim.exit);
             }
