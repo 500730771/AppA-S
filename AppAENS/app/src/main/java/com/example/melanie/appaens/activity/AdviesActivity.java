@@ -2,6 +2,7 @@ package com.example.melanie.appaens.activity;
 
 import android.content.Intent;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,6 +44,9 @@ public class AdviesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advies);
         Log.d("ADVIESACTIVITY","ADVIESPAGINA");
+
+        ActionBar toolbar = getSupportActionBar();
+        toolbar.setTitle("Advies");
 
         mAfrondenChecklist = (Button) findViewById(R.id.idAdvies_afronden);
 
@@ -192,5 +196,14 @@ public class AdviesActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (true) {
+            //do nothing
+        } else {
+            super.onBackPressed();
+        }
     }
 }
