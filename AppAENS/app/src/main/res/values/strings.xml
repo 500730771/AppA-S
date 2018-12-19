@@ -9,6 +9,10 @@ Deze ‘Aansluiten &amp; Stimuleren’-App is bedoeld voor ouders en begeleiders
 \n\nVeel succes!
 \n\nVragen en/of opmerkingen? Neem gerust contact op met ons! (info@socialerelatiesenict.nl)</string>
 
+    <!--Auteursrechten-->
+    <string name="auteursrechten_toelichting"> Auteursrechten: T. Doodeman, H. Blom-Yoo &amp; P. Sterkenburg. Afdeling ontwikkelingspedagogiek, Vrije Universiteit Amsterdam: November 2018
+    Samenwerkingspartners: </string>
+
     <!--Uitleg scherm-->
     <!--Button Uitlegscherm-->
     <string name="uitleg_button">Verder</string>
