@@ -310,7 +310,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@color/colorVerder"
-                android:text="@string/home_button"
+                android:text="@string/Advies_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.508"
