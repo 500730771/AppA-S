@@ -72,7 +72,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }else {
             holder.item_title.setText(getBeantwoordeVragen(position) + "/" + mCategorie.get(position).getMaxVragen());
         }
-        holder.item_image.setImageResource(mDrawableList[mCategorie.get(position).getImage()]);
+        holder.item_image.setImageResource(mDrawableList[position]);
 
          holder.item_box.setOnClickListener(new View.OnClickListener(){
              @Override
