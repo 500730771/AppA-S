@@ -1,4 +1,7 @@
 package com.example.melanie.appaens.activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -7,6 +10,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,11 +41,28 @@ public class BedanktActivity extends AppCompatActivity {
         toolbar.setTitle("Bedankt");
 
         DataSource data = new DataSource();
-        Observatie observatie = data.getObservatie();
+        final Observatie observatie = data.getObservatie();
 
         mText = (TextView) findViewById(R.id.testText);
 
         Log.d("BEDANKTACTIVITY", "Make pdf");
+
+        Button mButtonVerder = (Button) findViewById(R.id.idBedankt_button);
+        mButtonVerder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(BedanktActivity.this)
+                        .setMessage("Het pdf-bestand is naar het volgende emailadres gestuurd: " + observatie.getEmail() + ".")
+                        .setCancelable(false)
+                        .setPositiveButton("Afsluiten", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                startActivity(new Intent(BedanktActivity.this, MainActivity.class));
+                            }
+                        })
+                        .show();
+
+            }
+        });
 
 //        String pdfcontent = generateHelloWorldPDF();
 //        outputToScreen(R.id.text, pdfcontent);
