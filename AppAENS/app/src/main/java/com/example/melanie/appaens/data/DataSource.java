@@ -153,7 +153,7 @@ public class DataSource {
         categorieList.add(new Categorie(9, "Ogen", 9, getQuestionListCategorie(9).size(), 0));
         categorieList.add(new Categorie(12, "Neus", 12, getQuestionListCategorie(12).size(), 0));
         categorieList.add(new Categorie(10, "Mond", 10, getQuestionListCategorie(10).size(), 0));
-        
+
         if (video) {
             categorieList.add(new Categorie(13, "Ander gedrag O/B", 13, getQuestionListCategorie(13).size(), 0));
             categorieList.add(new Categorie(14, "Klaar", 14, 0, 0));
