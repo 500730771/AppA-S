@@ -140,19 +140,19 @@ public class DataSource {
     private void setCategorieList() {
         //initialize categorielist
         categorieList = new ArrayList<Categorie>();
-        categorieList.add(new Categorie(3, "Acties", 3, getQuestionListCategorie(3).size(), 0));
-        categorieList.add(new Categorie(4, "Geluid", 4, getQuestionListCategorie(4).size(), 0));
-        categorieList.add(new Categorie(1, "Houding", 1, getQuestionListCategorie(1).size(), 0));
-        categorieList.add(new Categorie(0, "Gehele lichaam", 0, getQuestionListCategorie(0).size(), 0));
-        categorieList.add(new Categorie(5, "Bovenlichaam", 5, getQuestionListCategorie(5).size(), 0));
-        categorieList.add(new Categorie(11, "Armen", 11, getQuestionListCategorie(11).size(), 0));
-        categorieList.add(new Categorie(2, "Handen", 2, getQuestionListCategorie(2).size(), 0));
-        categorieList.add(new Categorie(6, "Onderlichaam", 6, getQuestionListCategorie(6).size(), 0));
-        categorieList.add(new Categorie(7, "Voeten", 7, getQuestionListCategorie(7).size(), 0));
-        categorieList.add(new Categorie(8, "Hoofd", 8, getQuestionListCategorie(8).size(), 0));
-        categorieList.add(new Categorie(9, "Ogen", 9, getQuestionListCategorie(9).size(), 0));
-        categorieList.add(new Categorie(12, "Neus", 12, getQuestionListCategorie(12).size(), 0));
-        categorieList.add(new Categorie(10, "Mond", 10, getQuestionListCategorie(10).size(), 0));
+        categorieList.add(new Categorie(3, "Acties", 0, getQuestionListCategorie(3).size(), 0));
+        categorieList.add(new Categorie(4, "Geluid", 1, getQuestionListCategorie(4).size(), 0));
+        categorieList.add(new Categorie(1, "Houding", 2, getQuestionListCategorie(1).size(), 0));
+        categorieList.add(new Categorie(0, "Gehele lichaam", 3, getQuestionListCategorie(0).size(), 0));
+        categorieList.add(new Categorie(5, "Bovenlichaam", 4, getQuestionListCategorie(5).size(), 0));
+        categorieList.add(new Categorie(11, "Armen", 5, getQuestionListCategorie(11).size(), 0));
+        categorieList.add(new Categorie(2, "Handen", 6, getQuestionListCategorie(2).size(), 0));
+        categorieList.add(new Categorie(6, "Onderlichaam", 7, getQuestionListCategorie(6).size(), 0));
+        categorieList.add(new Categorie(7, "Voeten", 8, getQuestionListCategorie(7).size(), 0));
+        categorieList.add(new Categorie(8, "Hoofd", 9, getQuestionListCategorie(8).size(), 0));
+        categorieList.add(new Categorie(9, "Ogen", 10, getQuestionListCategorie(9).size(), 0));
+        categorieList.add(new Categorie(12, "Neus", 11, getQuestionListCategorie(12).size(), 0));
+        categorieList.add(new Categorie(10, "Mond", 12, getQuestionListCategorie(10).size(), 0));
         
         if (video) {
             categorieList.add(new Categorie(13, "Ander gedrag O/B", 13, getQuestionListCategorie(13).size(), 0));
