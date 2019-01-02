@@ -16,7 +16,7 @@
             android:layout_width="90dp"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:scaleType="fitCenter"
+            android:scaleType="centerInside"
             app:srcCompat="@drawable/armen" />
 
         <TextView
