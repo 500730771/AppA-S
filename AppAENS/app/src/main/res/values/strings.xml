@@ -77,5 +77,10 @@ Deze ‘Aansluiten &amp; Stimuleren’-App is bedoeld voor ouders en begeleiders
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">OVERVIEW PAGE</string>
-
+<!--Bedanktscherm-->
+    <string name="Bedankt_titel">        Bedankt!</string>
+    <string name="Bedankt_toelichting">Bedankt voor het gebruiken van de A&amp;S-app! We hopen dat het u heeft geholpen.\n
+    </string>
+    <string name="Bedankt_button">PDF-bestand verzenden</string>
+    <string name="Bedankt1_toelichting">Vragen en/of opmerkingen? Neem gerust contact op met ons! (info@socialerelatiesenict.nl)</string>
 </resources>

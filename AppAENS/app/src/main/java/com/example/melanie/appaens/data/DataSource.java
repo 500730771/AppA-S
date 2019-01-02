@@ -161,7 +161,7 @@ public class DataSource {
         categorieList.add(new Categorie(11, "Armen", 11, getQuestionListCategorie(11).size(), 0));
         categorieList.add(new Categorie(12, "Neus", 12, getQuestionListCategorie(12).size(), 0));
         if (video) {
-            categorieList.add(new Categorie(13, "Niet sensitief", 13, getQuestionListCategorie(13).size(), 0));
+            categorieList.add(new Categorie(13, "Ander gedrag O/B", 13, getQuestionListCategorie(13).size(), 0));
             categorieList.add(new Categorie(14, "Klaar", 14, 0, 0));
         } else{
             categorieList.add(new Categorie(13, "Klaar", 13, 0, 0));
