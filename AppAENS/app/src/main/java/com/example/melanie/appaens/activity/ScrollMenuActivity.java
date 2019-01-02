@@ -45,7 +45,7 @@ public class ScrollMenuActivity extends AppCompatActivity {
         HeaderFragment myFragment = new HeaderFragment();
         activity.getSupportFragmentManager().beginTransaction().replace(R.id.header_fragment, myFragment).addToBackStack(null).commit();
 
-        QuestionFragment qfragment = new QuestionFragment(this, 0);
+        QuestionFragment qfragment = new QuestionFragment(this, mCategorieList.get(0).getId());
         activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, qfragment).addToBackStack(null).commit();
 
         initRecyclerviewNavigation();
