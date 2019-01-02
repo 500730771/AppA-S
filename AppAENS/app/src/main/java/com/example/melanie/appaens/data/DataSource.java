@@ -1,12 +1,6 @@
 package com.example.melanie.appaens.data;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-
 import com.example.melanie.appaens.R;
-import com.example.melanie.appaens.activity.ScrollMenuActivity;
-import com.example.melanie.appaens.adapter.RecyclerViewAdapter;
 import com.example.melanie.appaens.model.Categorie;
 import com.example.melanie.appaens.model.Informatie;
 import com.example.melanie.appaens.model.Observatie;
@@ -69,37 +63,36 @@ public class DataSource {
     private void setDrawablesCategorieList(){
         if (video){
             int[] drawableList = {
-                    R.drawable.gehelelichaam,
-                    R.drawable.houding,
-                    R.drawable.handen,
                     R.drawable.acties,
                     R.drawable.geluid,
+                    R.drawable.houding,
+                    R.drawable.gehelelichaam,
                     R.drawable.bovenlichaam,
+                    R.drawable.armen,
+                    R.drawable.handen,
                     R.drawable.onderlichaam,
                     R.drawable.voeten,
                     R.drawable.hoofd,
                     R.drawable.ogen,
-                    R.drawable.mond,
-                    R.drawable.armen,
                     R.drawable.neus,
-                    R.drawable.nietsensitief,
+                    R.drawable.mond,
+                    R.drawable.andergedrag,
                     R.drawable.klaar
             };drawablesCategorieList = drawableList;
         }else{
-            int[] drawableList = {
-                    R.drawable.gehelelichaam,
-                    R.drawable.houding,
-                    R.drawable.handen,
-                    R.drawable.acties,
+            int[] drawableList = { R.drawable.acties,
                     R.drawable.geluid,
+                    R.drawable.houding,
+                    R.drawable.gehelelichaam,
                     R.drawable.bovenlichaam,
+                    R.drawable.armen,
+                    R.drawable.handen,
                     R.drawable.onderlichaam,
                     R.drawable.voeten,
                     R.drawable.hoofd,
                     R.drawable.ogen,
-                    R.drawable.mond,
-                    R.drawable.armen,
                     R.drawable.neus,
+                    R.drawable.mond,
                     R.drawable.klaar
             };drawablesCategorieList = drawableList;
         }
@@ -147,19 +140,20 @@ public class DataSource {
     private void setCategorieList() {
         //initialize categorielist
         categorieList = new ArrayList<Categorie>();
-        categorieList.add(new Categorie(0, "Gehele lichaam", 0, getQuestionListCategorie(0).size(), 0));
-        categorieList.add(new Categorie(1, "Houding", 1, getQuestionListCategorie(1).size(), 0));
-        categorieList.add(new Categorie(2, "Handen", 2, getQuestionListCategorie(2).size(), 0));
         categorieList.add(new Categorie(3, "Acties", 3, getQuestionListCategorie(3).size(), 0));
         categorieList.add(new Categorie(4, "Geluid", 4, getQuestionListCategorie(4).size(), 0));
+        categorieList.add(new Categorie(1, "Houding", 1, getQuestionListCategorie(1).size(), 0));
+        categorieList.add(new Categorie(0, "Gehele lichaam", 0, getQuestionListCategorie(0).size(), 0));
         categorieList.add(new Categorie(5, "Bovenlichaam", 5, getQuestionListCategorie(5).size(), 0));
+        categorieList.add(new Categorie(11, "Armen", 11, getQuestionListCategorie(11).size(), 0));
+        categorieList.add(new Categorie(2, "Handen", 2, getQuestionListCategorie(2).size(), 0));
         categorieList.add(new Categorie(6, "Onderlichaam", 6, getQuestionListCategorie(6).size(), 0));
         categorieList.add(new Categorie(7, "Voeten", 7, getQuestionListCategorie(7).size(), 0));
         categorieList.add(new Categorie(8, "Hoofd", 8, getQuestionListCategorie(8).size(), 0));
         categorieList.add(new Categorie(9, "Ogen", 9, getQuestionListCategorie(9).size(), 0));
-        categorieList.add(new Categorie(10, "Mond", 10, getQuestionListCategorie(10).size(), 0));
-        categorieList.add(new Categorie(11, "Armen", 11, getQuestionListCategorie(11).size(), 0));
         categorieList.add(new Categorie(12, "Neus", 12, getQuestionListCategorie(12).size(), 0));
+        categorieList.add(new Categorie(10, "Mond", 10, getQuestionListCategorie(10).size(), 0));
+        
         if (video) {
             categorieList.add(new Categorie(13, "Ander gedrag O/B", 13, getQuestionListCategorie(13).size(), 0));
             categorieList.add(new Categorie(14, "Klaar", 14, 0, 0));
