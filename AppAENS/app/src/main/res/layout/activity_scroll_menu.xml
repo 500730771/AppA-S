@@ -22,6 +22,7 @@
         android:id="@+id/header_fragment"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_margin="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idMenu_NavigationList">
@@ -207,18 +208,6 @@
 
 
     </android.support.constraint.ConstraintLayout>
-
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/idMenu_InformationList"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center"-->
-        <!--android:layout_marginTop="4dp"-->
-        <!--android:layout_marginBottom="4dp"-->
-        <!--android:scrollbars="none"-->
-        <!--app:layout_constraintTop_toBottomOf="@+id/header_fragment"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"/>-->
 
     <FrameLayout
         android:id="@+id/question_fragment"

@@ -6,7 +6,6 @@
     android:layout_height="60dp"
     tools:context=".fragment.HeaderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,18 +15,20 @@
             android:id="@+id/idFragment_image"
             android:layout_width="90dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:scaleType="centerInside"/>
+            android:gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/armen" />
 
         <TextView
             android:id="@+id/idFragment_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerInside"
-            android:textColor="@color/colorBlack"
-            android:gravity="center_vertical"
             android:layout_marginLeft="10dp"
-            android:textSize="30sp"/>
+            android:gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:text="hoi"
+            android:textColor="@color/colorBlack"
+            android:textSize="30sp" />
     </LinearLayout>
 
 </FrameLayout>
