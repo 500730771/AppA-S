@@ -93,7 +93,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                      activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, oFragment).addToBackStack(null).commit();
                  } else {
                      //question list
-                     QuestionFragment qFragment = new QuestionFragment(context, current.getImage());
+                     QuestionFragment qFragment = new QuestionFragment(context, current.getId());
                      activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, qFragment).addToBackStack(null).commit();
                  }
              }
