@@ -258,7 +258,6 @@ public class DataSource {
         questionList.add(new Question(5, "Schommelt (voor-achter)"));
         questionList.add(new Question(5, "Leunt voorover"));
         questionList.add(new Question(5, "Wiegt (links-rechts)"));
-        questionList.add(new Question(5, "Categorie 5"));
 
 // Onderlichaam
         questionList.add(new Question(6, "Strekt benen"));
