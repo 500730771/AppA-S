@@ -29,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textStyle="bold"
             android:text="@string/overview_spanningsniveau"
             android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
@@ -37,6 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:textStyle="bold"
             android:text="@string/overview_aantal"
             android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
     </LinearLayout>
@@ -48,7 +50,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-             android:layout_width="30dp"
+             android:layout_width="25dp"
              android:layout_height="match_parent"
              android:orientation="vertical">
 
