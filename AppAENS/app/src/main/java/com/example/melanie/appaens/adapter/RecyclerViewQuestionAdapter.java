@@ -10,6 +10,8 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +61,26 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
         // set question text
         holder.mQuestion.setText(mQuestionList.get(position).getQuestion());
         print();
+
+        holder.mToelichting.setText(mQuestionList.get(position).getToelichting());
+        holder.mToelichting.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                Question q = mQuestionList.get(position);
+                q.setToelichting(s.toString());
+                data.setQuestion(q);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         // save all buttons in a list
         buttonList[position][0] = holder.mButtonRed;
@@ -136,6 +158,10 @@ public class RecyclerViewQuestionAdapter extends RecyclerView.Adapter<RecyclerVi
                 buttonClick(holder.mButtonPurple, 6, 7, mQuestionList.get(position), position);
             }
         });
+    }
+
+    private void textchange(){
+
     }
 
     private void print(){
