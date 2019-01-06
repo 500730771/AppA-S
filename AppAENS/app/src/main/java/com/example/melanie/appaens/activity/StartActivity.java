@@ -1,5 +1,7 @@
 package com.example.melanie.appaens.activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.v7.app.ActionBar;
@@ -56,20 +58,34 @@ public class StartActivity extends AppCompatActivity {
         mVerder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (rClient.isChecked()){
-                    video = false;
-                } else if (rVideo.isChecked())
-                    video = true;
-                Observatie observatie = new Observatie(mClient.getText().toString(),
-                        mObservator.getText().toString(), mDatum.getText().toString(), video, mEmail.getText().toString());
-                data.setObservatie(observatie);
-                data.setData(video);
+                if (validation(mObservator, mClient, mDatum, mEmail)) {
+                    if (rClient.isChecked()) {
+                        video = false;
+                    } else if (rVideo.isChecked())
+                        video = true;
+                    Observatie observatie = new Observatie(mClient.getText().toString(),
+                            mObservator.getText().toString(), mDatum.getText().toString(), video, mEmail.getText().toString());
+                    data.setObservatie(observatie);
+                    data.setData(video);
 
-                startActivity(new Intent(StartActivity.this, ScrollMenuActivity.class));
-                overridePendingTransition(R.anim.enter, R.anim.exit);
+                    startActivity(new Intent(StartActivity.this, ScrollMenuActivity.class));
+                    overridePendingTransition(R.anim.enter, R.anim.exit);
+                } else {
+                    new AlertDialog.Builder(StartActivity.this)
+                            .setMessage("Niet alle velden zijn ingevuld.")
+                            .setCancelable(false)
+                            .setNegativeButton("Terug", null)
+                            .show();
+                }
             }
         });
 
+    }
+
+    public boolean validation(EditText one, EditText two, EditText three, EditText four){
+        if (one.getText().toString() != null && two.getText().toString() != "" && three.getText().toString() != "" && four.getText().toString() != "")
+            return true;
+        return false;
     }
 
     //transition overrides
