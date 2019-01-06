@@ -200,7 +200,7 @@ public class DataSource {
         questionList.add(new Question(1, "Zit op zitvlak"));
         questionList.add(new Question(1, "Zit op schoot van de ander"));
         questionList.add(new Question(1, "Zit opgetrokken knieën / kleermakershouding"));
-        questionList.add(new Question(1, "zit gehurkt / op knieën"));
+        questionList.add(new Question(1, "Zit gehurkt / op knieën"));
         questionList.add(new Question(1, "Staat"));
 // Handen
         questionList.add(new Question(2, "Speelt met handen"));

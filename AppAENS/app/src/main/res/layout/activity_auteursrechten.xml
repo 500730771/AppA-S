@@ -58,6 +58,21 @@
                 app:srcCompat="@drawable/vulogo" />
 
             <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
+                app:layout_constraintEnd_toEndOf="@+id/scrollView4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idauteursrechten_toelichting"
+                app:srcCompat="@drawable/zonmw" />
+
+            <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="350dp"
                 android:layout_height="80dp"
@@ -73,21 +88,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/idauteursrechten_toelichting"
                 app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@drawable/hvalogo" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="350dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:scaleType="fitXY"
-                app:layout_constraintBottom_toBottomOf="@+id/scrollView4"
-                app:layout_constraintEnd_toEndOf="@+id/scrollView4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/idauteursrechten_toelichting"
-                app:srcCompat="@drawable/zonmw" />
 
             <ImageView
                 android:id="@+id/imageView4"
