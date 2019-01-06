@@ -41,14 +41,14 @@ public class ScrollMenuActivity extends AppCompatActivity {
         mColorList = data.getColors();
         mQuestionList = data.getQuestionListCategorie(0);
 
+        initRecyclerviewNavigation();
+
         AppCompatActivity activity = (AppCompatActivity) this;
         HeaderFragment myFragment = new HeaderFragment();
         activity.getSupportFragmentManager().beginTransaction().replace(R.id.header_fragment, myFragment).addToBackStack(null).commit();
 
         QuestionFragment qfragment = new QuestionFragment(this, mCategorieList.get(0).getId());
         activity.getSupportFragmentManager().beginTransaction().replace(R.id.question_fragment, qfragment).addToBackStack(null).commit();
-
-        initRecyclerviewNavigation();
 
         LinearLayout mBoxred = (LinearLayout) findViewById(R.id.idInformatie_boxred);
         LinearLayout mBoxorange = (LinearLayout) findViewById(R.id.idInformatie_boxorange);
@@ -125,6 +125,7 @@ public class ScrollMenuActivity extends AppCompatActivity {
         rv.setLayoutManager(layoutManager);
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, mCategorieList, mDrawableList);
         rv.setAdapter(adapter);
+        adapter.setCurrent(mCategorieList.get(0));
     }
 
     //transition overrides

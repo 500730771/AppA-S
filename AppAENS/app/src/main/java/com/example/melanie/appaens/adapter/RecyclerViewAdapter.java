@@ -104,6 +104,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return current;
     }
 
+    public void setCurrent(Categorie nieuw){ current = nieuw;}
+
     public int[] getmDrawableList(){
         return mDrawableList;
     }
