@@ -70,7 +70,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             holder.item_title.setText("Klaar");
 
         }else {
-            holder.item_title.setText(getBeantwoordeVragen(position) + "/" + mCategorie.get(position).getMaxVragen());
+            holder.item_title.setText(getBeantwoordeVragen(mCategorie.get(position).getId()) + "/" + mCategorie.get(position).getMaxVragen());
         }
         holder.item_image.setImageResource(mDrawableList[position]);
 

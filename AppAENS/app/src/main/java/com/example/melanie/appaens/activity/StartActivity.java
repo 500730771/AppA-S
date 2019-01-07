@@ -82,9 +82,9 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public boolean validation(EditText one, EditText two, EditText three, EditText four){
-        if (one.getText().toString().matches("") || two.getText().toString().matches("")
-                || three.getText().toString().matches("") || four.getText().toString().matches(""))
-            return false;
+//        if (one.getText().toString().matches("") || two.getText().toString().matches("")
+//                || three.getText().toString().matches("") || four.getText().toString().matches(""))
+//            return false;
         return true;
     }
 
